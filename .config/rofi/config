@@ -1,0 +1,12 @@
+# Uncomment for Dark Theme
+rofi.theme: ~/.cache/wal/colors-rofi-dark.rasi
+
+# Uncomment for Light Theme
+# rofi.theme: ~/.cache/wal/colors-rofi-light.rasi
+
+rofi.width: 30
+rofi.lines: 10
+# rofi.sidebar-mode: true
+rofi.cycle: true
+rofi.case-sensitivity: false
+rofi.fake-background: screenshot

@@ -1,0 +1,39 @@
+! *.font: pango:monospace 10
+
+Xft.dpi:                        96
+Xft.antialias:                  1
+Xft.autohint:                   1
+Xft.hinting:                    1
+Xft.hintstyle:                  hintslight
+Xft.lcdfilter:                  lcdlight
+Xft.rgba:                       rgb
+
+! URxvt
+URxvt*termName:                 rxvt-256color
+URxvt.depth:                    32
+URxvt*lineSpace:                1
+URxvt.letterSpace:              -1
+URxvt.iso14755:                 false
+URxvt.iso14755_52:              false
+URxvt*geometry:                 65x17
+URxvt.scrollBar:                false
+URxvt*loginShell:               true
+! URxvt.internalBorder:           25
+URxvt.perl-ext:	 		default,matcher
+URxvt.url-launcher:             firefox
+URxvt.matcher.button: 		1
+URxvt.transparancy: 		true
+URxvt.shading: 			80
+URxvt.perl-ext-common: 		default,clipboard,url-select,keyboard-select
+URxvt.url-select.launcher:	firefox
+URxvt.url-select.underline:	true
+URxvt.keysym.M-u:			perl:url-select:select_next
+URxvt.keysym.M-Escape:		perl:keyboard-select:activate
+URxvt.keysym.M-s:			perl:keyboard-select:search
+
+! Fonts
+URxvt*font:	xft:Inconsolata:size=11
+!URxvt*font: ttf:FontAwesome:size=12
+! Urxvt.boldFont: ttf:Inconsolata-13
+! Urxvt.letterSpace: 		3 
+! URxvt.font: "ttf:FontAwesome-14"

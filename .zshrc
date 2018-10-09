@@ -2,13 +2,14 @@
 # $PATH. export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-  export ZSH="/home/rwithik/.oh-my-zsh"
+export ZSH="/home/rwithik/.oh-my-zsh"
 
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="dracula"
-ZSH_THEME="fino-edited"
+ZSH_THEME="adben-minimal"
+# ZSH_THEME="fino-edited"
+#ZSH_THEME="random"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -34,13 +35,13 @@ export UPDATE_ZSH_DAYS=4
 # DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
-DISABLE_AUTO_TITLE="true"
+# DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
 ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
-# COMPLETION_WAITING_DOTS="true"
+COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
 # under VCS as dirty. This makes repository status check for large repositories
@@ -62,10 +63,12 @@ ENABLE_CORRECTION="true"
 plugins=(
   git
   zsh-syntax-highlighting
+  archlinux
+  colored-man-pages
 )
 
 source $ZSH/oh-my-zsh.sh
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -96,18 +99,17 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias cls=clear
-alias nano='nano -T 4 -m -S -A'
 alias weather='curl wttr.in/trivandrum'
 alias pt=python3
 alias L='less'
-alias lol=lolcat
 alias pipes=pipes.sh
-alias ran=ranger
+alias clock=tty-clock
+alias yolo='sudo pacman -Syu'
+alias playmusic='mpv --shuffle /home/rwithik/Music/'
+alias getsong='python /home/rwithik/Programs/Python/song-downloader/downloader.py'
 
-
-# Add RVM to PATH for scripting. Make sure this is the last PATH variable change.
-export PATH="$PATH:$HOME/.rvm/bin"
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+# Custom
+# setsid wal -r
+# setsid printf '\e]710;%s\007' "xtf: Inconsolata:pixelsize=19"
+setsid cat /home/rwithik/.cache/wal/sequences
+# fortune | cowsay
