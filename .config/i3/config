@@ -152,10 +152,10 @@ mode "resize" {
         bindsym semicolon resize grow width 10 px or 10 ppt
 
         # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+        bindsym Left resize shrink width 5 px or 5 ppt
+        bindsym Down resize grow height 5 px or 5 ppt
+        bindsym Up resize shrink height 5 px or 5 ppt
+        bindsym Right resize grow width 5 px or 5 ppt
 
         # back to normal: Enter or Escape or $mod+r
         bindsym Return mode "default"
@@ -167,17 +167,18 @@ bindsym $mod+r mode "resize"
 
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
+#bar {
 #        status_command i3blocks
-        status_command i3status
-}
+#        status_command i3status
+#        status_command polybar wpgtk
+#}
 
 #=================================================
 #Custom Bindings and execs
 #=================================================
 
 # i3 gaps
-gaps inner 6
+gaps inner 7
 gaps outer 0
 #smart_gaps on
 #smart_borders on|no_gaps
@@ -188,13 +189,14 @@ for_window [class="feh"] floating enable
 for_window [class="(?i)gsimplecal"] floating enable, move position, move down $height px
 
 # Scripts to be executed on startup
-# exec-always --no-startup-id xinput set-prop 11 279 1
+exec-always --no-startup-id xinput set-prop 11 285 1
 exec compton -cCGf -b -i 0.75 --vsync opengl --opacity-rule '99:name *= "Firefox"'
-# exec wal -i /home/rwithik/Pictures/Pictures/Wallpapers/
+exec wal -i /home/rwithik/Pictures/Wallpapers/
 exec_always xinput set-prop 11 279 1
 exec xrdb ~/.Xresources
 exec redshift -O 5000
-exec --no-startup-id ~/Desktop/wallpaperScript.sh &
+exec polybar wpgtk
+# exec --no-startup-id ~/Desktop/wallpaperScript.sh &
 
 # ================================================
 # Custom keybindings
@@ -203,7 +205,7 @@ exec --no-startup-id ~/Desktop/wallpaperScript.sh &
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 bindsym $mod+d exec rofi -show run 
-bindsym Print exec scrot '%Y-%m-%d_$wx$h.png' -e mv $f ~/Pictures/Pictures/Screenshots/
+bindsym Print exec scrot '%Y-%m-%d-%s_Screenshot_$wxx$h.png' -e mv $f ~/Pictures/Screenshots/
 bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/Arch\ Walls
 bindsym $mod+l exec --no-startup-id /home/rwithik/Desktop/lockscreen.sh /home/rwithik/Pictures/lock.png
 

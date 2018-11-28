@@ -7,9 +7,10 @@ export ZSH="/home/rwithik/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-ZSH_THEME="adben-minimal"
+# ZSH_THEME="adben-minimal"
 # ZSH_THEME="fino-edited"
-#ZSH_THEME="random"
+# ZSH_THEME="half-life" # Really good. Just make it two lined.
+ZSH_THEME="half-life"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -102,14 +103,15 @@ alias cls=clear
 alias weather='curl wttr.in/trivandrum'
 alias pt=python3
 alias L='less'
-alias pipes=pipes.sh
+alias pipes=pipesX.sh
 alias clock=tty-clock
 alias yolo='sudo pacman -Syu'
 alias playmusic='mpv --shuffle /home/rwithik/Music/'
-alias getsong='python /home/rwithik/Programs/Python/song-downloader/downloader.py'
+alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloader.py'
 
 # Custom
 # setsid wal -r
 # setsid printf '\e]710;%s\007' "xtf: Inconsolata:pixelsize=19"
 setsid cat /home/rwithik/.cache/wal/sequences
 # fortune | cowsay
+export PATH="/home/rwithik/.gem/ruby/2.5.0/bin:$PATH"

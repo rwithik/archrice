@@ -1,4 +1,5 @@
 set autoindent
+set showcmd
 "filetype off
 set tabstop=4
 set relativenumber
@@ -27,6 +28,6 @@ inoremap <Space><Space> <Esc>/<++><Enter>4x:noh<Enter>i
 
 " Keymaps for C Files
 
-autocmd FileType c inoremap ;p printf("<++>", );<Esc>
+autocmd FileType c inoremap ;p printf("<++>", );<Esc>0
 autocmd FileType c inoremap ;for for(<++>; <++>; <++>)<Esc>0i
 " autocmd FileType c inoremap { {<Enter><Enter>}<Esc>j<C-I>i
