@@ -11,6 +11,12 @@
 
 set $mod Mod4
 
+# ==================================================
+# Custom Variables
+# ==================================================
+
+set $term urxvt
+
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
 font pango:monospace 10
@@ -37,30 +43,11 @@ bindsym $mod+Return exec i3-sensible-terminal
 bindsym $mod+Shift+q kill
 bindsym $mod+Shift+x kill
 
-# start dmenu (a program launcher)
-# bindsym $mod+d exec dmenu_run
-# There also is the (new) i3-dmenu-desktop which only displays applications
-# shipping a .desktop file. It is a wrapper around dmenu, so you need that
-# installed.
-# bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
-
-# change focus
-# bindsym $mod+j focus left
-# bindsym $mod+k focus down
-# bindsym $mod+l focus up
-# bindsym $mod+semicolon focus right
-
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
 bindsym $mod+Down focus down
 bindsym $mod+Up focus up
 bindsym $mod+Right focus right
-
-# move focused window
-# bindsym $mod+Shift+j move left
-# bindsym $mod+Shift+k move down
-# bindsym $mod+Shift+l move up
-# bindsym $mod+Shift+semicolon move right
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Shift+Left move left
@@ -138,40 +125,10 @@ bindsym $mod+Shift+r restart
 # exit i3 (logs you out of your X session)
 bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
-# resize window (you can also use the mouse for that)
-mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
-
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 10 px or 10 ppt
-        bindsym k resize grow height 10 px or 10 ppt
-        bindsym l resize shrink height 10 px or 10 ppt
-        bindsym semicolon resize grow width 10 px or 10 ppt
-
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 5 px or 5 ppt
-        bindsym Down resize grow height 5 px or 5 ppt
-        bindsym Up resize shrink height 5 px or 5 ppt
-        bindsym Right resize grow width 5 px or 5 ppt
-
-        # back to normal: Enter or Escape or $mod+r
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-        bindsym $mod+r mode "default"
-}
-
-bindsym $mod+r mode "resize"
-
-# Start i3bar to display a workspace bar (plus the system information i3status
-# finds out, if available)
-#bar {
-#        status_command i3blocks
-#        status_command i3status
-#        status_command polybar wpgtk
-#}
+bindsym $mod+Shift+h resize shrink width 5 px or 5 ppt
+bindsym $mod+Shift+k resize grow height 5 px or 5 ppt
+bindsym $mod+Shift+j resize shrink height 5 px or 5 ppt
+bindsym $mod+Shift+l resize grow width 5 px or 5 ppt
 
 #=================================================
 #Custom Bindings and execs
@@ -192,15 +149,15 @@ for_window [class="(?i)gsimplecal"] floating enable, move position, move down $h
 exec-always --no-startup-id xinput set-prop 11 285 1
 exec compton -cCGf -b -i 0.75 --vsync opengl --opacity-rule '99:name *= "Firefox"'
 exec wal -i /home/rwithik/Pictures/Wallpapers/
-exec_always xinput set-prop 11 279 1
+exec_always xinput set-prop 11 285 1
 exec xrdb ~/.Xresources
 exec redshift -O 5000
-exec polybar wpgtk
+exec --no-startup-id ~/.config/polybar/launch.sh
 # exec --no-startup-id ~/Desktop/wallpaperScript.sh &
 
 # ================================================
 # Custom keybindings
-# ===============================================
+# ================================================
 
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
@@ -209,6 +166,19 @@ bindsym Print exec scrot '%Y-%m-%d-%s_Screenshot_$wxx$h.png' -e mv $f ~/Pictures
 bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/Arch\ Walls
 bindsym $mod+l exec --no-startup-id /home/rwithik/Desktop/lockscreen.sh /home/rwithik/Pictures/lock.png
 
+# ================================================
+# Program bindings
+# ================================================
+
+bindsym $mod+r exec $term -e ranger
+bindsym $mod+m exec $term -e playmusic
+
+# ================================================
+# Scratchpad bindings
+# ================================================
+
+bindsym $mod+Shift+grave move scratchpad
+bindsym $mod+asciitilde scratchpad show
 
 # ================================================
 # Volume controls with Fn keys

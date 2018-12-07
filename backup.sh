@@ -6,7 +6,7 @@ cp -v ~/.config/ranger/* ./.config/ranger/
 cp -v ~/.config/polybar/* ./.config/polybar/
 cp -v -r ~/Desktop/lockscreen.sh ./Scripts/
 cp -v -r ~/Desktop/wallpaperScript.sh ./Scripts/
-cp -r ~/.oh-my-zsh/themes ./zsh-themes
+#cp -r ~/.oh-my-zsh/themes ./zsh-themes
 cp -v ~/.Xresources ./.Xresources
 cp -v ~/.zshrc ./.zshrc
 cp -v ~/.xinitrc ./.xinitrc

@@ -9,9 +9,9 @@
 
 [colors]
 background = ${xrdb:color0}
-background-alt = #120B0F
+background-alt = #120B0F3F
 foreground = ${xrdb:color1}
-foreground-alt = ${xrdb:color1}
+foreground-alt = ${xrdb:color15}
 active = ${xrdb:color8}
 charging-background = ${xrdb:color6}
 discharging-background = ${xrdb:color15}
@@ -28,7 +28,7 @@ radius = 5
 fixed-center = false
 
 background = ${colors.background}
-foreground = ${colors.foreground}
+;foreground = ${colors.foreground-alt}
 
 line-size = 3
 line-color = #f00
@@ -47,14 +47,16 @@ font-1 = FontAwesome:style=Regular:size=10:antialias=false;2
 
 modules-left = i3 
 #xwindow
-modules-center = mpd
+modules-center = 
+#mpd
 modules-right =  volume wlan temperature battery date 
 # powermenu
 # eth
 tray-position = none
 tray-padding = 10
 tray-background = ${colors.inactive}
-
+tray-transparancy = true
+dim-value = 0.5
 #[module/xwindow]
 #type = internal/xwindow
 #format-background = ${colors.active}
@@ -111,7 +113,8 @@ label-mode-background = ${xrdb:color2}
 
 ; focused = Active workspace on focused monitor
 label-focused = %index% %icon%
-label-focused-background = ${xrdb:color7}
+label-focused-background = ${colors.active}
+label-focused-foreground = ${colors.foreground-alt}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
@@ -126,7 +129,7 @@ label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
 label-urgent = %index% %icon%
-label-urgent-background = ${colors.active}
+label-urgent-background = #FF0000
 label-urgent-padding = 2
 
 [module/mpd]
@@ -196,8 +199,8 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
-ramp-signal-foreground = ${colors.foreground-alt}
-
+ramp-signal-foreground = ${colors.foreground}
+format-connected-foreground = ${colors.foreground}
 #[module/eth]
 #type = internal/network
 #interface = enp2s0
@@ -227,7 +230,7 @@ label-active =  "  o  "
 label-occupied = "  *  "
 label-empty = "  -  "
 label-empty-background = ${colors.inactive}
-format-background = ${colors.inactive}
+format-background = ${colors.active}
 
 [module/date]
 type = internal/date
@@ -296,7 +299,7 @@ ramp-capacity-1 = 
 ramp-capacity-2 =  
 ramp-capacity-3 = 
 ramp-capacity-4 =  
-ramp-capacity-foreground = ${colors.foreground-alt}
+ramp-capacity-foreground = ${colors.foreground}
 
 animation-charging-0 =  
 animation-charging-1 =   
@@ -322,8 +325,31 @@ label-padding = 2
 
 label = " %temperature-c%"
 label-warn = " %temperature-c%"
+label-foreground = ${colors.foreground-alt}
 label-background = ${colors.inactive}
+label-warn-foreground = ${colors.foreground-alt}
 label-warn-background = ${xrdb:color2}
+
+
+# ;==================================================================
+
+# [module/update]
+# type = custom/script
+# # type = custom/script
+# exec = ~/.config/polybar/update-checker-arch.sh
+# interval = 600
+
+
+# [module/player-mpris-simple]
+# type = custom/script
+# exec = ~/.config/polybar/player-mpris-simple.sh
+# interval = 3
+# click-left = playerctl previous
+# click-right = playerctl next
+# click-middle = playerctl play-pause
+
+
+# ;==================================================================
 
 [global/wm]
 margin-top = 5
