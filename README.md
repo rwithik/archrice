@@ -36,6 +36,11 @@ Type `:wp` when an image is selected, to set it as the wallpaper using wal. Also
 
 Set up to use the wal color scheme
 
+#### .config/polybar
+
+Generated with [wpgtk](https://github.com/deviantfero/wpgtk)
+Changes colors with wallpaper.
+
 #### Scripts
 
 * lockscreen.sh: An i3-lock script that replaces the screen with a pixellated screenshot.
