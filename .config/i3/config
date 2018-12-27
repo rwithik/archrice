@@ -15,7 +15,24 @@ set $mod Mod4
 # Custom Variables
 # ==================================================
 
-set $term urxvt
+set $term st
+
+# Set colors from Xresources
+# Change 'color7' and 'color2' to whatever colors you want i3 to use 
+# from the generated scheme.
+# NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
+# it fails to get colors from Xresources.
+set_from_resource $fg i3wm.color7 #f0f0f0
+set_from_resource $bg i3wm.color2 #f0f0f0
+
+# class                 border  backgr. text indicator child_border
+client.focused          $bg     $bg     $fg  $bg       $bg
+client.focused_inactive $bg     $bg     $fg  $bg       $bg
+client.unfocused        $bg     $bg     $fg  $bg       $bg
+client.urgent           $bg     $bg     $fg  $bg       $bg
+client.placeholder      $bg     $bg     $fg  $bg       $bg
+
+client.background       $bg
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
@@ -36,7 +53,7 @@ font pango:monospace 10
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec st
 #bindsym $mod+Return exec urxvt -fn "xft:Inconsolata:pixelsize=15"
 
 # kill focused window
@@ -141,19 +158,19 @@ gaps outer 0
 #smart_borders on|no_gaps
 
 # Remove window borders
-for_window [class="^.*"] border pixel 0
-for_window [class="feh"] floating enable
+for_window [class="^.*"] border pixel 1
+#for_window [class="feh"] floating enable
 for_window [class="(?i)gsimplecal"] floating enable, move position, move down $height px
 
 # Scripts to be executed on startup
-exec-always --no-startup-id xinput set-prop 11 285 1
 exec compton -cCGf -b -i 0.75 --vsync opengl --opacity-rule '99:name *= "Firefox"'
-exec wal -i /home/rwithik/Pictures/Wallpapers/
+exec wal -i /home/rwithik/wallpapers/Etc/
 exec_always xinput set-prop 11 285 1
 exec xrdb ~/.Xresources
 exec redshift -O 5000
-exec --no-startup-id ~/.config/polybar/launch.sh
+exec ~/.config/polybar/launch.sh
 # exec --no-startup-id ~/Desktop/wallpaperScript.sh &
+exec --no-startup-id $term -n "dropdown"
 
 # ================================================
 # Custom keybindings
@@ -162,16 +179,22 @@ exec --no-startup-id ~/.config/polybar/launch.sh
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 bindsym $mod+d exec rofi -show run 
-bindsym Print exec scrot '%Y-%m-%d-%s_Screenshot_$wxx$h.png' -e mv $f ~/Pictures/Screenshots/
-bindsym $mod+Shift+w exec --no-startup-id wal -i ~/Pictures/Arch\ Walls
-bindsym $mod+l exec --no-startup-id /home/rwithik/Desktop/lockscreen.sh /home/rwithik/Pictures/lock.png
+bindsym Print exec scrot '%Y-%m-%d-%s_Screenshot_$wxx$h.png' -e mv '$f ~/Pictures/Screenshots/'
+bindsym $mod+Shift+w exec --no-startup-id wal -i ~/wallpapers/Etc/
+bindsym $mod+l exec --no-startup-id /home/rwithik/Desktop/lockscreen.sh 
+exec_always --no-startup-id st -n dropdown &
 
+bindsym F1 [instance="dropdown"] scratchpad show, move position center
+
+for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
 # ================================================
 # Program bindings
 # ================================================
 
 bindsym $mod+r exec $term -e ranger
-bindsym $mod+m exec $term -e playmusic
+bindsym $mod+m exec $term -n "music" -e "mpv ~/Music"
+#for_window [instance="music"] floating enable, resize set 500 400, move scratchpad
+#bindsym $mod+asciitilde [instance="music"] scratchpad show, move position center
 
 # ================================================
 # Scratchpad bindings

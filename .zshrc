@@ -100,7 +100,7 @@ source $ZSH/oh-my-zsh.sh
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim ~/.oh-my-zsh"
 alias cls=clear
-alias weather='curl wttr.in/trivandrum'
+#alias weather='curl wttr.in/trivandrum'
 alias pt=python3
 alias L='less'
 alias pipes=pipesX.sh
@@ -108,6 +108,22 @@ alias clock=tty-clock
 alias yolo='sudo pacman -Syu'
 alias playmusic='mpv --shuffle /home/rwithik/Music/'
 alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloader.py'
+
+# ============================================
+# CUSTOM FUNCTIONS
+# ============================================
+
+mkcd(){
+	mkdir "$1" && cd "$1"
+}
+
+psa(){
+	ps aux | grep "$1"
+}
+
+weather(){
+	curl wttr.in/${1}
+}
 
 # Custom
 # setsid wal -r

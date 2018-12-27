@@ -10,13 +10,13 @@
 [colors]
 background = ${xrdb:color0}
 background-alt = #120B0F3F
-foreground = ${xrdb:color1}
+foreground = ${xrdb:color15}
 foreground-alt = ${xrdb:color15}
 active = ${xrdb:color8}
-charging-background = ${xrdb:color6}
-discharging-background = ${xrdb:color15}
+charging-background = ${xrdb:color8}
+discharging-background = ${xrdb:color8}
 inactive = ${xrdb:color5}
-wlan-background = ${xrdb:color15}
+wlan-background = ${xrdb:color8}
 
 [bar/wpgtk]
 monitor = eDP1
@@ -55,8 +55,8 @@ modules-right =  volume wlan temperature battery date
 tray-position = none
 tray-padding = 10
 tray-background = ${colors.inactive}
-tray-transparancy = true
-dim-value = 0.5
+; tray-transparancy = true
+; dim-value = 0.5
 #[module/xwindow]
 #type = internal/xwindow
 #format-background = ${colors.active}
@@ -85,7 +85,6 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
-
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
@@ -325,10 +324,10 @@ label-padding = 2
 
 label = " %temperature-c%"
 label-warn = " %temperature-c%"
-label-foreground = ${colors.foreground-alt}
+label-foreground = ${colors.foreground}
 label-background = ${colors.inactive}
-label-warn-foreground = ${colors.foreground-alt}
-label-warn-background = ${xrdb:color2}
+label-warn-foreground = ${colors.foreground}
+label-warn-background = ${colors.inactive}
 
 
 # ;==================================================================
