@@ -51,9 +51,10 @@ The suckless terminal.
 Colors are loaded .Xresources file, ie wal colors.
 I use a [custom build](https://github.com/rwithik/my-st-build) with some patches applied.
 
-#### [urxvt]
+#### urxvt
 
-My fallback terminal. 
+My fallback terminal.
+wal colors.
 Looks pretty much the same as st.
 
 #### [rofi](https://github.com/DaveDavenport/rofi)
@@ -72,7 +73,7 @@ I use a [custom dmenu build](https://github.com/rwithik/my-dmenu-build), mainly 
 Generated with [wpgtk](https://github.com/deviantfero/wpgtk)
 Changes colors with wallpaper.
 
-#### Scripts
+#### [Scripts](https://github.com/rwithik/archrice/tree/master/Scripts)
 
 * lockscreen.sh: An i3-lock script that replaces the screen with a pixellated screenshot.
 * wallpaperScript: A script to change the wallpaper at regular intervals. You should probably use a crontab for this.
