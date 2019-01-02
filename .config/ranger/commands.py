@@ -52,7 +52,7 @@ class wp(Command):
             self.fm.notify("The file doesn't exist. Wat r u trying to do, boii? SMH", bad=True)
             return
 
-        command = "wal -i \'" + target_file + "\' -g &"
+        command = "wal -i \'" + target_file + "\' -g  >> /dev/null &"
 
         # This executes a function from ranger.core.acitons, a module with a
         # variety of subroutines that can help you construct commands.

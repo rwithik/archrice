@@ -52,48 +52,8 @@ font pango:monospace 10
 # Use Mouse+$mod to drag floating windows to their wanted position
 floating_modifier $mod
 
-# start a terminal
-bindsym $mod+Return exec st
-#bindsym $mod+Return exec urxvt -fn "xft:Inconsolata:pixelsize=15"
-
-# kill focused window
-bindsym $mod+Shift+q kill
-bindsym $mod+Shift+x kill
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
-
-# alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
-
-# split in horizontal orientation
-bindsym $mod+h split h
-
-# split in vertical orientation
-bindsym $mod+v split v
-
-# enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen toggle
-
-# change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+w layout tabbed
-bindsym $mod+e layout toggle split
-
-# toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+a focus parent
 
 # focus the child container
 #bindsym $mod+d focus child
@@ -111,55 +71,14 @@ set $ws8 "8"
 set $ws9 "9"
 set $ws10 "10"
 
-# switch to workspace
-bindsym $mod+1 workspace $ws1
-bindsym $mod+2 workspace $ws2
-bindsym $mod+3 workspace $ws3
-bindsym $mod+4 workspace $ws4
-bindsym $mod+5 workspace $ws5
-bindsym $mod+6 workspace $ws6
-bindsym $mod+7 workspace $ws7
-bindsym $mod+8 workspace $ws8
-bindsym $mod+9 workspace $ws9
-bindsym $mod+0 workspace $ws10
-
-# move focused container to workspace
-bindsym $mod+Shift+1 move container to workspace $ws1
-bindsym $mod+Shift+2 move container to workspace $ws2
-bindsym $mod+Shift+3 move container to workspace $ws3
-bindsym $mod+Shift+4 move container to workspace $ws4
-bindsym $mod+Shift+5 move container to workspace $ws5
-bindsym $mod+Shift+6 move container to workspace $ws6
-bindsym $mod+Shift+7 move container to workspace $ws7
-bindsym $mod+Shift+8 move container to workspace $ws8
-bindsym $mod+Shift+9 move container to workspace $ws9
-bindsym $mod+Shift+0 move container to workspace $ws10
-
-# reload the configuration file
-bindsym $mod+Shift+c reload
-# restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
-# exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
-
-bindsym $mod+Shift+h resize shrink width 5 px or 5 ppt
-bindsym $mod+Shift+k resize grow height 5 px or 5 ppt
-bindsym $mod+Shift+j resize shrink height 5 px or 5 ppt
-bindsym $mod+Shift+l resize grow width 5 px or 5 ppt
-
-#=================================================
-#Custom Bindings and execs
-#=================================================
+#bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # i3 gaps
-gaps inner 7
+gaps inner 6
 gaps outer 0
-#smart_gaps on
-#smart_borders on|no_gaps
 
 # Remove window borders
 for_window [class="^.*"] border pixel 1
-#for_window [class="feh"] floating enable
 for_window [class="(?i)gsimplecal"] floating enable, move position, move down $height px
 
 # Scripts to be executed on startup
@@ -169,51 +88,127 @@ exec_always xinput set-prop 11 285 1
 exec xrdb ~/.Xresources
 exec redshift -O 5000
 exec ~/.config/polybar/launch.sh
-# exec --no-startup-id ~/Desktop/wallpaperScript.sh &
-exec --no-startup-id $term -n "dropdown"
+exec --no-startup-id st -n dropdown &
+
+# bindsym F1 [instance="dropdown"] scratchpad show, move position center
+
+# for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
 
 # ================================================
-# Custom keybindings
+# KEYBINDINGS
 # ================================================
+
+# Workspace controls
+
+bindsym $mod+1 workspace $ws1
+bindsym $mod+Shift+1 move container to workspace $ws1
+
+bindsym $mod+2 workspace $ws2
+bindsym $mod+Shift+2 move container to workspace $ws2
+
+bindsym $mod+3 workspace $ws3
+bindsym $mod+Shift+3 move container to workspace $ws3
+
+bindsym $mod+4 workspace $ws4
+bindsym $mod+Shift+4 move container to workspace $ws4
+
+bindsym $mod+5 workspace $ws5
+bindsym $mod+Shift+5 move container to workspace $ws5
+
+bindsym $mod+6 workspace $ws6
+bindsym $mod+Shift+6 move container to workspace $ws6
+
+bindsym $mod+7 workspace $ws7
+bindsym $mod+Shift+7 move container to workspace $ws7
+
+bindsym $mod+8 workspace $ws8
+bindsym $mod+Shift+8 move container to workspace $ws8
+
+bindsym $mod+9 workspace $ws9
+bindsym $mod+Shift+9 move container to workspace $ws9
+
+bindsym $mod+0 workspace $ws10
+bindsym $mod+Shift+0 move container to workspace $ws10
+
+# --------------------------------------------------------
+
+bindsym $mod+Shift+q kill
+bindsym $mod+Shift+r restart
+bindsym $mod+Shift+c reload
+
+bindsym $mod+a focus parent
+
+bindsym $mod+s layout stacking
+bindsym $mod+w layout tabbed
+bindsym $mod+e layout toggle split
+
+bindsym $mod+f fullscreen toggle
+
+bindsym $mod+d exec rofi -show run
+bindsym $mod+Shift+d exec dmenu_run
+
+bindsym $mod+h split h
+bindsym $mod+v split v
+
+bindsym $mod+Shift+h resize shrink width 5 px or 5 ppt
+bindsym $mod+Shift+k resize grow height 5 px or 5 ppt
+bindsym $mod+Shift+j resize shrink height 5 px or 5 ppt
+bindsym $mod+Shift+l resize grow width 5 px or 5 ppt
+
+bindsym $mod+z gaps inner all plus 5
+bindsym $mod+Shift+z gaps inner all minus 5
+
+bindsym $mod+x gaps outer all plus 5
+bindsym $mod+Shift+x gaps outer all minus 5
+
+bindsym $mod+Shift+a gaps inner all set 6, gaps outer all set 0
+
+bindsym $mod+Shift+e exec prompt "Are you sure you want to shutdown?" "shutdown now"
+bindsym $mod+l exec prompt "Lock Screen?" "/home/rwithik/Desktop/Scripts/lockscreen.sh"
+
+bindsym $mod+Shift+w exec --no-startup-id wal -i ~/wallpapers/Etc/
+
+bindsym $mod+r exec $term -e ranger
+bindsym $mod+Shift+i exec $term -e ranger ~/wallpapers
 
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
-bindsym $mod+d exec rofi -show run 
-bindsym Print exec scrot '%Y-%m-%d-%s_Screenshot_$wxx$h.png' -e mv '$f ~/Pictures/Screenshots/'
-bindsym $mod+Shift+w exec --no-startup-id wal -i ~/wallpapers/Etc/
-bindsym $mod+l exec --no-startup-id /home/rwithik/Desktop/lockscreen.sh 
-exec_always --no-startup-id st -n dropdown &
 
-bindsym F1 [instance="dropdown"] scratchpad show, move position center
+bindsym $mod+m exec $term -e "mpv --shuffle ~/Music"
 
-for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
-# ================================================
-# Program bindings
-# ================================================
+# Brightness controls
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
-bindsym $mod+r exec $term -e ranger
-bindsym $mod+m exec $term -n "music" -e "mpv ~/Music"
-#for_window [instance="music"] floating enable, resize set 500 400, move scratchpad
-#bindsym $mod+asciitilde [instance="music"] scratchpad show, move position center
-
-# ================================================
-# Scratchpad bindings
-# ================================================
-
-bindsym $mod+Shift+grave move scratchpad
-bindsym $mod+asciitilde scratchpad show
-
-# ================================================
-# Volume controls with Fn keys
-# ================================================
-
+# Volume controls
 bindsym XF86AudioMute exec amixer set Master toggle
 bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
 bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 
-# ================================================
-# Brightness controls with Fn keys
-# ================================================
+# Scratchpad controls
+bindsym $mod+Shift+grave move scratchpad
+bindsym $mod+asciitilde scratchpad show
 
-bindsym XF86MonBrightnessDown exec xbacklight -dec 10
-bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+# Screenshot
+bindsym Print exec ~/Desktop/Scripts/screenshot.sh
+#
+# toggle tiling / floating
+bindsym $mod+Shift+space floating toggle 
+# change focus between tiling / floating windows
+bindsym $mod+space focus mode_toggle 
+
+bindsym $mod+Return exec st
+
+bindsym $mod+Left focus left
+bindsym $mod+Down focus down
+bindsym $mod+Up focus up
+bindsym $mod+Right focus right
+
+bindsym $mod+Shift+Left move left
+bindsym $mod+Shift+Down move down
+bindsym $mod+Shift+Up move up
+bindsym $mod+Shift+Right move right
+
+bindsym $mod+t exec ~/Desktop/Scripts/todoScript
+bindsym $mod+Shift+t exec todo -d
+

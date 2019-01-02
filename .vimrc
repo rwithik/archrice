@@ -23,8 +23,8 @@ set runtimepath=~/.vim,$VIM/vimfiles,$VIMRUNTIME,$VIM/vimfiles/after,~/.vim/afte
 "autocmd FileType c noremap <C-/> <Esc>0i//<Esc>$i
 
 "General Keymaps
-map <Space><Space> /<++><Enter>4x:noh<Enter>i
-inoremap <Space><Space> <Esc>/<++><Enter>4x:noh<Enter>i
+"map <Space><Space> /<++><Enter>4x:noh<Enter>i
+"inoremap <Space><Space> <Esc>/<++><Enter>4x:noh<Enter>i
 
 " Keymaps for C Files
 

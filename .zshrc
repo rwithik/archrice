@@ -10,7 +10,8 @@ export ZSH="/home/rwithik/.oh-my-zsh"
 # ZSH_THEME="adben-minimal"
 # ZSH_THEME="fino-edited"
 # ZSH_THEME="half-life" # Really good. Just make it two lined.
-ZSH_THEME="half-life"
+# ZSH_THEME="lukerandall"
+ZSH_THEME="my-theme"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -103,11 +104,14 @@ alias cls=clear
 #alias weather='curl wttr.in/trivandrum'
 alias pt=python3
 alias L='less'
-alias pipes=pipesX.sh
+alias pipes=pipes.sh
 alias clock=tty-clock
 alias yolo='sudo pacman -Syu'
 alias playmusic='mpv --shuffle /home/rwithik/Music/'
 alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloader.py'
+alias r=ranger
+alias :q=exit
+alias :wq=exit
 
 # ============================================
 # CUSTOM FUNCTIONS
