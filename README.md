@@ -22,9 +22,9 @@ Your typical `.zshrc`. A few extra aliases and functions.
 * `alias cls=clear`
 * `alias pipes=pipes.sh`
 * `alias clock=tty-clock`
-* mkcd "<directory>": Will make a new directory named <directory> and cd into it.
-* psa "<name>": Will run `ps aux | grep <name>`
-* weather <place>: Will run `curl wttr.in/<place>`
+* mkcd "\<directory\>": Will make a new directory named <directory> and cd into it.
+* psa "\<name\>": Will run `ps aux | grep <name>`
+* weather \<place\>: Will run `curl wttr.in/<place>`
 
 And a few more...
 
