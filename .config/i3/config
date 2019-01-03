@@ -168,14 +168,17 @@ bindsym $mod+l exec prompt "Lock Screen?" "/home/rwithik/Desktop/Scripts/lockscr
 
 bindsym $mod+Shift+w exec --no-startup-id wal -i ~/wallpapers/Etc/
 
+bindsym $mod+t exec ~/Desktop/Scripts/todoScript
+bindsym $mod+Shift+t exec todo -d
+
 bindsym $mod+r exec $term -e ranger
 bindsym $mod+Shift+i exec $term -e ranger ~/wallpapers
 
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 
-bindsym $mod+m exec $term -e "mpv --shuffle ~/Music"
-
+bindsym $mod+m exec $term -n music -e '/home/rwithik/Desktop/Scripts/music'
+for_window[instance="music"] floating enable, set position center, move scratchpad, [instance=music] scratchpad show
 # Brightness controls
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
@@ -209,6 +212,4 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+t exec ~/Desktop/Scripts/todoScript
-bindsym $mod+Shift+t exec todo -d
 

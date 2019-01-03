@@ -98,18 +98,17 @@ source $ZSH/oh-my-zsh.sh
 # For a full list of active aliases, run `alias`.
 #
 # Example aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim ~/.oh-my-zsh"
 alias cls=clear
-#alias weather='curl wttr.in/trivandrum'
-alias pt=python3
-alias L='less'
-alias pipes=pipes.sh
 alias clock=tty-clock
-alias yolo='sudo pacman -Syu'
+
 alias playmusic='mpv --shuffle /home/rwithik/Music/'
 alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloader.py'
+
+alias pt=python3
 alias r=ranger
+alias v=vim
+alias s=sublime-text
+
 alias :q=exit
 alias :wq=exit
 

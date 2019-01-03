@@ -49,7 +49,7 @@ modules-left = i3
 #xwindow
 modules-center = 
 #mpd
-modules-right =  volume wlan temperature battery date 
+modules-right =  volume wlan  temperature battery date 
 # powermenu
 # eth
 tray-position = none
@@ -200,9 +200,10 @@ format-disconnected =
 ramp-signal-0 = 
 ramp-signal-foreground = ${colors.foreground}
 format-connected-foreground = ${colors.foreground}
+
 #[module/eth]
 #type = internal/network
-#interface = enp2s0
+#interface = enp0s20f0u3
 #; interface = enp0s25
 #interval = 3.0
 
