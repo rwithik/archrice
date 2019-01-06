@@ -9,8 +9,3 @@ case $1$2 in
 		echo "notify-send ${@:$#} && mpv ~/Desktop/Scripts/notify.ogg >> /dev/null" | at ${@:1:$length}
 		;;
 esac
-#echo "${@:$#}"
-#echo "${@}"
-#length=$(($#-1))
-#array=${@:1:$length}
-#echo $array
