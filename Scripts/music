@@ -11,6 +11,6 @@ case $(echo -en "Artists\nMood\nRandomly Play Everything" | dmenu -l 3) in
 #		mpv --shuffle "/home/rwithik/Music/$(echo -en 'Alan Walker\nSad' | dmenu -l 3).m3u"
 #		;;
 	Mood)
-		mpv --shuffle "/home/rwithik/Music/$(echo -en 'Sad' | dmenu -l 3).m3u"
+		mpv --shuffle "/home/rwithik/Music/$(echo -en 'Upbeat\nCalm\nSad' | dmenu -l 3).m3u"
 		;;
 esac

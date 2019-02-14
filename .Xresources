@@ -38,4 +38,4 @@ URxvt*font:	xft:Inconsolata:size=11
 !URxvt*font: ttf:FontAwesome:size=12
 ! Urxvt.boldFont: ttf:Inconsolata-13
 ! Urxvt.letterSpace: 		3 
-! URxvt.font: "ttf:FontAwesome-14"
+! URxvt.font: ttf:FontAwesome-14

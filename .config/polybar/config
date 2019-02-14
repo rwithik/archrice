@@ -8,27 +8,23 @@
 ;=====================================================
 
 [colors]
-background = ${xrdb:color0}
-background-alt = #120B0F3F
+background = ${xrdb:color8}
+background-alt = #120B0F
 foreground = ${xrdb:color15}
 foreground-alt = ${xrdb:color15}
-active = ${xrdb:color8}
-charging-background = ${xrdb:color8}
-discharging-background = ${xrdb:color8}
-inactive = ${xrdb:color5}
-wlan-background = ${xrdb:color8}
+active = #6a8e7a
+inactive = #3c5045
 
 [bar/wpgtk]
 monitor = eDP1
-height = 20
 width = 100%
-# offset-y = 0.5%
-# offset-x = 0.5%
-radius = 5
+height = 24
+offset-y = 0%
+radius = 0.0
 fixed-center = false
 
 background = ${colors.background}
-;foreground = ${colors.foreground-alt}
+foreground = ${colors.foreground}
 
 line-size = 3
 line-color = #f00
@@ -42,27 +38,23 @@ padding-right = 0
 module-margin-left = 0
 module-margin-right = 0
 
-font-0 = menlo:fontformat=truetype:size=8:antialias=true;1
-font-1 = FontAwesome:style=Regular:size=10:antialias=true;2
+font-0 = menlo:fontformat=truetype:size=8:antialias=true;2
+font-1 = FontAwesome:style=Regular:size=10:antialias=false;2
 
 modules-left = i3 
-#xwindow
-modules-center = 
-#mpd
-modules-right =  volume wlan  temperature battery date 
-# powermenu
-# eth
-tray-position = none
+modules-center = mpd
+modules-right =  volume wlan eth battery date
+
+tray-position = right
 tray-padding = 10
 tray-background = ${colors.inactive}
-; tray-transparancy = true
-; dim-value = 0.5
-#[module/xwindow]
-#type = internal/xwindow
-#format-background = ${colors.active}
-#format-foreground = ${colors.foreground}
-#format-padding = 2
-#label = %title:0:30:...%
+
+[module/xwindow]
+type = internal/xwindow
+format-background = ${colors.active}
+format-foreground = ${colors.foreground}
+format-padding = 2
+label = %title:0:30:...%
 
 [module/xkeyboard]
 type = internal/xkeyboard
@@ -85,10 +77,28 @@ type = internal/fs
 interval = 25
 
 mount-0 = /
+
 label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
+[module/bspwm]
+type = internal/bspwm
+
+label-focused = %index%
+label-focused-background = ${colors.active}
+label-focused-padding = 2
+
+label-occupied = %index%
+label-occupied-padding = 2
+
+label-urgent = %index%!
+label-urgent-background = ${colors.active}
+label-urgent-padding = 2
+
+label-empty = %index%
+label-empty-foreground = ${colors.foreground-alt}
+label-empty-padding = 2
 
 [module/i3]
 type = internal/i3
@@ -99,37 +109,29 @@ wrapping-scroll = false
 ; Only show workspaces on the same output as the bar
 ;pin-workspaces = true
 
-ws-icon-0 = 1;
-ws-icon-1 = 2;
-ws-icon-2 = 3;
-# ws-icon-3 = 4;
-ws-icon-3 = 10;
-ws-icon-default = 
-
 label-mode-padding = 2
 label-mode-foreground = ${colors.foreground}
 label-mode-background = ${xrdb:color2}
 
 ; focused = Active workspace on focused monitor
-label-focused = %index% %icon%
+label-focused = %index%
 label-focused-background = ${colors.active}
-label-focused-foreground = ${colors.foreground-alt}
 label-focused-padding = 2
 
 ; unfocused = Inactive workspace on any monitor
-label-unfocused = %index% %icon%
+label-unfocused = %index%
 label-unfocused-padding = 2
 label-unfocused-background = ${colors.inactive}
 
 ; visible = Active workspace on unfocused monitor
-label-visible = %index% %icon%
+label-visible = %index%
 label-visible-background = ${self.label-focused-background}
 label-visible-padding = ${self.label-focused-padding}
 
 ; urgent = Workspace with urgency hint set
-label-urgent = %index% %icon%
-label-urgent-background = #FF0000
-label-urgent-padding = 2
+label-urgent = %index%
+label-urgent-background = ${module/bspwm.label-urgent-background}
+label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/mpd]
 type = internal/mpd
@@ -183,13 +185,13 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp1s0
+interface = wlp3s0
 interval = 3.0
 
 format-connected-padding = 2
 format-connected = <ramp-signal> <label-connected>
 label-connected = %essid%
-format-connected-background = ${colors.wlan-background}
+format-connected-background = ${colors.active}
 
 format-disconnected =
 ;format-disconnected = <label-disconnected>
@@ -198,21 +200,20 @@ format-disconnected =
 ;label-disconnected-foreground = ${colors.foreground-alt}
 
 ramp-signal-0 = 
-ramp-signal-foreground = ${colors.foreground}
-format-connected-foreground = ${colors.foreground}
+ramp-signal-foreground = ${colors.foreground-alt}
 
-#[module/eth]
-#type = internal/network
-#interface = enp0s20f0u3
-#; interface = enp0s25
-#interval = 3.0
+[module/eth]
+type = internal/network
+; interface = eth1
+interface = enp0s25
+interval = 3.0
 
-#format-connected = <label-connected>
-#format-connected-padding = 2
-#format-connected-background = ${colors.active}
-#label-connected =  %local_ip%
+format-connected = <label-connected>
+format-connected-padding = 2
+format-connected-background = ${colors.active}
+label-connected =  %local_ip%
 
-#format-disconnected =
+format-disconnected =
 ;format-disconnected = <label-disconnected>
 ;format-disconnected-underline = ${self.format-connected-underline}
 ;label-disconnected = %ifname% disconnected
@@ -230,7 +231,7 @@ label-active =  "  o  "
 label-occupied = "  *  "
 label-empty = "  -  "
 label-empty-background = ${colors.inactive}
-format-background = ${colors.active}
+format-background = ${colors.inactive}
 
 [module/date]
 type = internal/date
@@ -291,27 +292,26 @@ format-charging = <animation-charging> <label-charging>
 format-discharging = <ramp-capacity> <label-discharging> 
 format-full =  <label-full>
 format-full-padding = 2
-format-full-background = ${xrdb:color3}
-# ${colors.active}
+format-full-background = ${colors.active}
 
 ramp-capacity-0 = 
 ramp-capacity-1 =  
 ramp-capacity-2 =  
 ramp-capacity-3 = 
 ramp-capacity-4 =  
-ramp-capacity-foreground = ${colors.foreground}
+ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 =  
 animation-charging-1 =   
 animation-charging-2 =   
 animation-charging-3 =  
 animation-charging-4 =  
-animation-charging-foreground = ${colors.foreground}
+animation-charging-foreground = ${colors.foreground-alt}
 animation-charging-framerate = 750
 format-charging-padding = 2
-format-charging-background = ${colors.charging-background}
+format-charging-background = ${colors.active}
 format-discharging-padding = 2
-format-discharging-background = ${colors.discharging-background}
+format-discharging-background = ${colors.inactive}
 
 [module/temperature]
 type = internal/temperature
@@ -323,33 +323,41 @@ format-warn = <label-warn>
 label-warn-padding = 2
 label-padding = 2
 
-label = " %temperature-c%"
-label-warn = " %temperature-c%"
-label-foreground = ${colors.foreground}
+label = " %temperature%"
+label-warn = " %temperature%"
 label-background = ${colors.inactive}
-label-warn-foreground = ${colors.foreground}
-label-warn-background = ${colors.inactive}
+label-warn-background = ${xrdb:color2}
 
+[module/powermenu]
+type = custom/menu
+format-spacing = 1
+format-background = ${xrdb:color2}
+format-padding = 1
 
-# ;==================================================================
+label-open = 
+label-open-foreground = ${colors.foreground-alt}
+label-close =  cancel
+label-close-foreground = ${colors.inactive}
+label-separator = |
+label-separator-foreground = ${colors.foreground-alt}
+menu-0-0 = reboot
+menu-0-0-exec = menu-open-1
+menu-0-1 = power off
+menu-0-1-exec = menu-open-2
 
-# [module/update]
-# type = custom/script
-# # type = custom/script
-# exec = ~/.config/polybar/update-checker-arch.sh
-# interval = 600
+menu-1-0 = cancel
+menu-1-0-exec = menu-open-0
+menu-1-1 = reboot
+menu-1-1-exec = reboot
 
+menu-2-0 = power off
+menu-2-0-exec = poweroff
+menu-2-1 = cancel
+menu-2-1-exec = menu-open-0
 
-# [module/player-mpris-simple]
-# type = custom/script
-# exec = ~/.config/polybar/player-mpris-simple.sh
-# interval = 3
-# click-left = playerctl previous
-# click-right = playerctl next
-# click-middle = playerctl play-pause
-
-
-# ;==================================================================
+[settings]
+screenchange-reload = true
+format-prefix-font = 2
 
 [global/wm]
 margin-top = 5

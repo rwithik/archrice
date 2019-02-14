@@ -11,7 +11,7 @@ export ZSH="/home/rwithik/.oh-my-zsh"
 # ZSH_THEME="fino-edited"
 # ZSH_THEME="half-life" # Really good. Just make it two lined.
 # ZSH_THEME="lukerandall"
-ZSH_THEME="my-theme"
+ZSH_THEME="mytheme"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -107,7 +107,7 @@ alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloade
 alias pt=python3
 alias r=ranger
 alias v=vim
-alias s=sublime-text
+alias s=subl
 
 alias :q=exit
 alias :wq=exit
