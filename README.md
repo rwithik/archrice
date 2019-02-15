@@ -28,7 +28,7 @@ Your typical `.zshrc`. A few extra aliases and functions.
 
 And a few more...
 
-#### [Vim](https://vim.org)
+#### [Vim](https://www.vim.org)
 
 #### [i3-gaps](https://github.com/Airblader/i3)
 
