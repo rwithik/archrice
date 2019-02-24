@@ -34,9 +34,9 @@ And a few more...
 
 > A fork of i3wm, a tiling window manager for Linux. It includes a few additional features like gaps, etc.
 
-Your typical i3-gaps config. Uses wal colors.
-Some key bindings were removed. Foe example, the resize mode was completely removed.
-And lot of custom keybindings.
+Your typical i3-gaps config. Uses wal colors.  
+Some key bindings were removed. For example, the resize mode was completely removed.  
+And lot of custom keybindings.  
 
 #### [ranger](https://github.com/ranger/ranger)
 
