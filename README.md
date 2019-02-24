@@ -2,7 +2,7 @@
 
 ### Installing
 
-Just clone the repo and run `install.sh`. You probably don't want to do this, though. These dotfiles are made for my laptop and will probably look weird on any other system.
+Just clone the repo and copy the files you need, or make symbolic links. You probably don't want to do this, though. These dotfiles are made for my laptop and will probably look weird on any other system.
 
 ### My Setup
 
