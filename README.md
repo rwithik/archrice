@@ -77,9 +77,7 @@ Changes colors with wallpaper.
 
 * lockscreen.sh: An i3-lock script that replaces the screen with a pixellated screenshot.
 * wallpaperScript: A script to change the wallpaper at regular intervals. You should probably use a crontab for this.
-* batterylow: Checks whether the battery is low and sends a notification through dunst.
 * screenshot.sh: Takes a screenshot, moves it to ~/Pictures/Screenshots/, plays a shutter sound, and sends a notification. Mostly for aesthetic purposes.
 * todo.cpp: A todo app, minimal integration with dmenu
 * todoScript: A script that integrates the todo app with dmenu.
 * prompt: A prompt using dmenu
-* remindme: A bash script. `./remindme 1 hour Hello` sends a dunst notification, with the heading "Hello", after one hour.
