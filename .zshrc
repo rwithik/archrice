@@ -7,11 +7,10 @@ export ZSH="/home/rwithik/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-# ZSH_THEME="adben-minimal"
-# ZSH_THEME="fino-edited"
-# ZSH_THEME="half-life" # Really good. Just make it two lined.
-# ZSH_THEME="lukerandall"
+#ZSH_THEME="half-life" # Really good. Just make it two lined.
+#ZSH_THEME="lukerandall"
 ZSH_THEME="mytheme"
+#ZSH_THEME="avit"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -70,7 +69,7 @@ plugins=(
 )
 
 source $ZSH/oh-my-zsh.sh
-# source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 
 # User configuration
 
@@ -97,17 +96,26 @@ source $ZSH/oh-my-zsh.sh
 # users are encouraged to define aliases within the ZSH_CUSTOM folder.
 # For a full list of active aliases, run `alias`.
 #
-# Example aliases
+
+# Custom Aliases
+# ==============
+
 alias cls=clear
 alias clock=tty-clock
 
 alias playmusic='mpv --shuffle /home/rwithik/Music/'
 alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloader.py'
 
-alias pt=python3
+alias clicker='python /home/rwithik/Programs/Python/autoclicker.py'
+
 alias r=ranger
 alias v=vim
 alias s=subl
+alias p=python
+
+alias ic='vim ~/.config/i3/config'
+alias vc='vim ~/.vimrc'
+alias zc='vim ~/.zshrc'
 
 alias :q=exit
 alias :wq=exit
@@ -128,9 +136,24 @@ weather(){
 	curl wttr.in/${1}
 }
 
+gitpush(){
+	git add .
+	git commit -m "$1" && git push
+}
+
+jc(){
+	javac ${1}.java && java $*
+}
+
 # Custom
 # setsid wal -r
 # setsid printf '\e]710;%s\007' "xtf: Inconsolata:pixelsize=19"
 setsid cat /home/rwithik/.cache/wal/sequences
 # fortune | cowsay
+
 export PATH="/home/rwithik/.gem/ruby/2.5.0/bin:$PATH"
+export EDITOR=/usr/bin/vim
+
+export NVM_DIR="/home/rwithik/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+

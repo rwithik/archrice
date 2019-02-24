@@ -24,23 +24,25 @@ set $term st
 # it fails to get colors from Xresources.
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $border_inactive i3wm.color1 #f0f0f0
+set_from_resource $border_active i3wm.color6 #f0f0f0
 
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+# class                 border  			backgr. text 	indicator child_border
+client.focused          $border_active     	$bg     $fg  	$bg       $border_active
+client.focused_inactive $border_inactive   	$bg     $fg  	$bg       $border_inactive
+client.unfocused        $border_inactive	$bg     $fg  	$bg       $border_inactive
+client.urgent           $border_inactive   	$bg     $fg  	$bg       $border_inactive
+client.placeholder      $border_inactive 	$bg     $fg  	$bg       $border_inactive
 
 client.background       $bg
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-font pango:monospace 10
+#font pango:monospace 10
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-#font pango:DejaVu Sans Mono 8
+font pango:DejaVu Sans Mono 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -74,22 +76,22 @@ set $ws10 "10"
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # i3 gaps
-gaps inner 6
+gaps inner 5
 gaps outer 0
 
 # Remove window borders
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 2
 for_window [class="(?i)gsimplecal"] floating enable, move position, move down $height px
 
 # Scripts to be executed on startup
 #exec compton -cCGf -b -i 0.75 --vsync opengl --opacity-rule '99:name *= "Firefox"'
 exec --no-startup-id compton -b
-exec wal -i /home/rwithik/wallpapers/Etc/
+exec wal -i /home/rwithik/wallpapers/Landscapes/
 exec xrdb ~/.Xresources
 exec redshift -O 5000
 #exec ~/.config/polybar/launch.sh
-exec --no-startup-id $term -n dropdown &
-exec --no-startup-id volumeicon
+#exec --no-startup-id $term -n dropdown &
+#exec --no-startup-id volumeicon
 exec --no-startup-id clipit
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
@@ -169,9 +171,10 @@ bindsym $mod+Shift+minus gaps outer all minus 10
 bindsym $mod+Shift+a gaps inner all set 6, gaps outer all set 0
 
 bindsym $mod+Shift+e exec prompt "Are you sure you want to shutdown?" "shutdown now"
-bindsym $mod+l exec prompt "Lock Screen?" "/home/rwithik/Desktop/Scripts/lockscreen.sh"
+#bindsym $mod+l exec prompt "Lock Screen?" "/home/rwithik/Desktop/Scripts/lockscreen.sh"
+bindsym $mod+l exec prompt "Lock Screen?" "betterlockscreen -l blur"
 
-bindsym $mod+Shift+w exec --no-startup-id wal -i ~/wallpapers/Etc/
+bindsym $mod+Shift+w exec --no-startup-id /home/rwithik/Desktop/Scripts/wallpaperScript.sh
 
 bindsym $mod+t exec ~/Desktop/Scripts/todoScript
 bindsym $mod+Shift+t exec todo -d
@@ -188,7 +191,7 @@ bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 
 bindsym $mod+m exec $term -n music -e '/home/rwithik/Desktop/Scripts/music'
 #for_window[instance="music"] floating enable, set position center, move scratchpad, [instance=music] scratchpad show
-for_window[instance="music"] floating enable, move position 400 0, resize set 566 45
+for_window[instance="music"] floating enable, move position 400 0, resize set 566 45, move scratchpad
 
 # Brightness controls
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
@@ -240,12 +243,15 @@ for_window [instance=floatterm] floating enable, resize set 780 520, move positi
 for_window [instance=boxterm] floating enable, resize set 535 160, move position 800 30
 
 bar {
+	font pango:DejaVu Sans Mono, FontAwesome 9
 	i3bar_command i3bar
-	status_command i3status
+	status_command i3blocks -c .config/i3blocks/i3blocks.conf
+#	status_command i3blocks -c .config/i3blocks.conf
+#	status_command ~/.config/polybar/launch.sh
 	position top
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'
-#	tray_output primary
+#tray_output primary
 #	tray_output eDP1
 
 	bindsym button4 nop

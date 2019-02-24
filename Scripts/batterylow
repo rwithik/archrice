@@ -1,5 +1,0 @@
-[ "$(cat /sys/class/power_supply/BAT0/status)" = "Charging" ] && exit
-[ "$(cat /sys/class/power_supply/BAT0/capacity) -lt 25" ] &&
-notify-send -u low  "Connect your charger." -i /usr/share/icons/Adwaita/64x64/devices/battery-symbolic.symbolic.png
-[ "$(cat /sys/class/power_supply/BAT0/capacity)" -lt 10 ] &&
-notify-send -u critical "Battery critically low." -i /usr/share/icons/Adwaita/64x64/devices/battery-symbolic.symbolic.png
