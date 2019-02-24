@@ -1,0 +1,24 @@
+#!/bin/bash
+
+CHOICE=`echo -en "Desktop\nDownloads\nPrograms\nSeries\nCompetitive Coding\nProjects\nOther" | dmenu`
+
+case $CHOICE in
+	"Competitive Coding" )
+		st -n floatterm -e ranger ~/Programs/Competitive\ Coding/`echo -en "HackerRank\nHackerEarth\nCodeChef\nProject Euler" | dmenu -l 5`
+		;;
+	Programs )
+		st -n floatterm -e ranger ~/Programs/`ls ~/Programs | sed '/^-/d;1d;s/.* //' | dmenu -l 5`
+		;;
+	Projects )
+		st -n floatterm -e ranger ~/Projects/`ls ~/Projects | sed '/^-/d;1d;s/.* //' | dmenu -l 5`
+		;;
+	Other )
+		st -n floatterm -e ranger ~/`ls ~| sed '/^-/d;1d;s/.* //' | dmenu -l 5`
+		;;
+	Series )
+		st -n floatterm -e ranger ~/Videos/Series
+		;;
+	* )
+		st -n floatterm -e ranger ~/$CHOICE
+		;;
+esac

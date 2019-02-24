@@ -1,0 +1,17 @@
+#!/bin/bash
+
+CHOICE=$(echo -en "Screenshots\nDownloads\nDesktop\nPictures\nDocuments\nMusic\nProjects\nOther" | dmenu)
+
+case $CHOICE in
+	Downloads|Desktop|Pictures|Documents|Music )
+		pcmanfm ~/${CHOICE} &
+		;;
+	Screenshots )
+		pcmanfm ~/Pictures/Screenshots &
+		;;
+	Projects )
+		pcmanfm ~/Projects/`ls ~/Projects| sed "/^-/d;1d;s/.* //" | dmenu`
+		;;
+	Other )
+		pcmanfm `ls ~ | sed "/^-/d;1d;s/.* //" | dmenu`
+esac
