@@ -2,15 +2,15 @@
 
 case $(echo -en "Artists\nMood\nRandomly Play Everything" | dmenu -l 3) in 
 	"Randomly Play Everything")
-		mpv --quiet --shuffle "/home/rwithik/Music/Everything.m3u"
+		mpv --quiet --shuffle "/home/rwithik/Music/English/Everything.m3u"
 		;;
 	Artists)
-		mpv --quiet --shuffle "/home/rwithik/Music/$(echo -en 'Alan Walker\nThe Chainsmokers\nMarshmello' | dmenu -l 3).m3u"
+		mpv --quiet --shuffle "/home/rwithik/Music/English/$(echo -en 'Alan Walker\nThe Chainsmokers\nMarshmello' | dmenu -l 3).m3u"
 		;;
 #	Genre)
-#		mpv --shuffle "/home/rwithik/Music/$(echo -en 'Alan Walker\nSad' | dmenu -l 3).m3u"
+#		mpv --shuffle "/home/rwithik/Music/English/$(echo -en 'Alan Walker\nSad' | dmenu -l 3).m3u"
 #		;;
 	Mood)
-		mpv --quiet --shuffle "/home/rwithik/Music/$(echo -en 'Upbeat\nCalm\nSad' | dmenu -l 3).m3u"
+		mpv --quiet --shuffle "/home/rwithik/Music/English/$(echo -en 'Upbeat\nCalm\nSad' | dmenu -l 3).m3u"
 		;;
 esac

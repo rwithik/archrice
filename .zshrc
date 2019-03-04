@@ -63,7 +63,6 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
-  zsh-syntax-highlighting
   archlinux
   colored-man-pages
 )
@@ -91,65 +90,9 @@ source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 # ssh
 # export SSH_KEY_PATH="~/.ssh/rsa_id"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-
-# Custom Aliases
-# ==============
-
-alias cls=clear
-alias clock=tty-clock
-
-alias playmusic='mpv --shuffle /home/rwithik/Music/'
-alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloader.py'
-
-alias clicker='python /home/rwithik/Programs/Python/autoclicker.py'
-
-alias r=ranger
-alias v=vim
-alias s=subl
-alias p=python
-
-alias ic='vim ~/.config/i3/config'
-alias vc='vim ~/.vimrc'
-alias zc='vim ~/.zshrc'
-
-alias :q=exit
-alias :wq=exit
-
-# ============================================
-# CUSTOM FUNCTIONS
-# ============================================
-
-mkcd(){
-	mkdir "$1" && cd "$1"
-}
-
-psa(){
-	ps aux | grep "$1"
-}
-
-weather(){
-	curl wttr.in/${1}
-}
-
-gitpush(){
-	git add .
-	git commit -m "$1" && git push
-}
-
-jc(){
-	javac ${1}.java && java $*
-}
-
 # Custom
-# setsid wal -r
 # setsid printf '\e]710;%s\007' "xtf: Inconsolata:pixelsize=19"
 setsid cat /home/rwithik/.cache/wal/sequences
-# fortune | cowsay
 
 export PATH="/home/rwithik/.gem/ruby/2.5.0/bin:$PATH"
 export EDITOR=/usr/bin/vim
@@ -157,3 +100,6 @@ export EDITOR=/usr/bin/vim
 export NVM_DIR="/home/rwithik/.nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
 
+[ -f "$HOME/archrice/aliasrc" ] && source $HOME/archrice/aliasrc
+[ -f "$HOME/archrice/functionsrc" ] && source $HOME/archrice/functionsrc
+[ -f "$HOME/archrice/foldersrc" ] && source $HOME/archrice/foldersrc

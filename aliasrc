@@ -1,0 +1,19 @@
+alias cls=clear
+alias clock=tty-clock
+
+alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloader.py'
+
+alias clicker='python /home/rwithik/Programs/Python/autoclicker.py'
+
+alias r=ranger
+alias v=vim
+alias s=subl
+alias p=python
+
+alias ic='vim ~/.config/i3/config'
+alias vc='vim ~/.vimrc'
+alias zc='vim ~/.zshrc'
+
+alias :q=exit
+alias :wq=exit
+

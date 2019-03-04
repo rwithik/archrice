@@ -1,0 +1,57 @@
+#!/bin/bash
+
+incorrect() {
+	echo "new: Incorrect usage"
+	echo "Use flags to specify the type of file"
+	echo "Available Flags"
+	echo "==============="
+	echo "	--java: A new Java template"
+	echo "	--c: A new C template"
+	echo "	--cpp: A new CPP template"
+	echo "	--python: A new Python template"
+	echo "	--bash: A new Bash template"
+	echo "	--texreport: A new LaTeX Report template [TODO]"
+	echo "	--texarticle: A new LaTeX Article template [TODO]"
+}
+
+createFile() {
+	case $1 in
+		--java )
+			cp ~/Templates/java ./$2.java
+			;;
+		--c )
+			cp ~/Templates/java ./$2.c
+			;;
+		--cpp )
+			cp ~/Templates/java ./$2.cpp
+			;;
+		--python )
+			cp ~/Templates/java ./$2.py
+			;;
+		--bash )
+			cp ~/Templates/java ./$2.sh
+			;;
+		* )
+			incorrect
+			;;
+	esac
+}
+
+NAME="new"
+
+if [[ $# -eq 3 ]]; then
+	if [[ $1 == "-o" ]]; then
+		createFile $3 $2
+	elif [[ $2 == "-o" ]]; then
+		createFile $1 $3
+	else
+		incorrect
+	fi
+
+elif [[ $# -eq 1 ]]; then
+	createFile $1 "new"
+
+else
+	incorrect
+
+fi

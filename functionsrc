@@ -1,0 +1,21 @@
+mkcd(){
+	mkdir "$1" && cd "$1"
+}
+
+psa(){
+	ps aux | grep "$1"
+}
+
+weather(){
+	curl wttr.in/${1}
+}
+
+gitpush(){
+	git add .
+	git commit -m "$1" && git push
+}
+
+jc(){
+	javac ${1}.java && java $*
+}
+

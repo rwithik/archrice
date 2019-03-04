@@ -231,16 +231,19 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-bindsym $mod+p floating enable, resize set 600 340, move position 735 30
-bindsym $mod+Shift+p floating enable, resize set 835 475, move position 525 30, sticky enable
+bindsym $mod+p exec $term -n pipterm
+bindsym $mod+Shift+p floating enable, resize set 600 340, move position 750 30, sticky enable
 
 bindsym $mod+z exec $term -n boxterm 
 bindsym $mod+Shift+z floating enable, resize set 535 160, move position 800 30
+
+bindsym $mod+Shift+m exec /home/rwithik/Desktop/Scripts/moveCenter.sh
 
 bindsym $mod+c exec --no-startup-id ~/Desktop/Scripts/sublime.sh
 
 for_window [instance=floatterm] floating enable, resize set 780 520, move position center
 for_window [instance=boxterm] floating enable, resize set 535 160, move position 800 30
+for_window [instance=pipterm] floating enable, resize set 600 340, move position 750 30
 
 bar {
 	font pango:DejaVu Sans Mono, FontAwesome 9
@@ -272,10 +275,3 @@ bar {
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
 }
-
-
-# =====================================================
-# Temporary bindings, probably
-# =====================================================
-
-bindsym $mod+Shift+v exec --no-startup-id $term -n floatterm -e zsh -c "ranger ~/Videos/Series/Jessica\ Jones"

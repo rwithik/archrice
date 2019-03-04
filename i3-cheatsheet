@@ -1,4 +1,5 @@
-$mod+F3: Call a dmenu script to open PCManFM on specific directories
+$mod+F3: Call a script to open ranger on a chosen directory
+$mod+Shift+F3: Call a script to open PCManFM on chosen directories
 PrtScr: Screenshot
 $mod+PrtScr: Screenshot focused window
 $mod+Shift+PrtScr: Screenshot with selection
@@ -22,8 +23,8 @@ $mod+Shift+r: Restart i3
 $mod+t: Todo app on dmenu
 $mod+Shift+t: Mark as done in todo app
 $mod+Shift+i: Open ~/wallpapers folder in ranger
-$mod+p: Picture in picture mode
-$mod+Shift+p: Like PiP mode, but larger and sticky
+$mod+p: Opens a terminal window in a box on the top right.
+$mod+Shift+p: Converts the current window to a box on the top right
 
 $mod+a: Focus parent container
 $mod+Shift+a: Set default gaps
@@ -40,6 +41,7 @@ $mod+Shift+Return: Floating terminal(st)
 
 $mod+z: Tiny box terminal window
 $mod+Shift+z: Resize current window to tiny box mode
+$mod+c: Opens sublime at the chosen directory
 $mod+Shift+c: Reload i3 config
 $mod+v: Split vertical
 $mod+b: Firefox

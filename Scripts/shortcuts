@@ -1,0 +1,20 @@
+#!/bin/bash
+
+
+foldersrc="$HOME/archrice/foldersrc"
+folders="$HOME/archrice/folders"
+rangershortcuts="$HOME/.config/ranger/shortcuts"
+
+if ! [[ -f $folders ]]
+then
+	echo "$folders does not exist"
+	exit
+fi
+
+rm $rangershortcuts 2> /dev/null
+
+echo "alias \\" > $foldersrc
+
+cat $folders | tee \
+		>(awk '{print $1"=\"cd "$2" && ls -A\" \\"}' >> $foldersrc) \
+		>(awk '{print "map g" $1, "cd", $2}' > $rangershortcuts)

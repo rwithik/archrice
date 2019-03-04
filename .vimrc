@@ -11,12 +11,6 @@ filetype indent on
 noremap <Space><Space> 0/<++><Enter>4xa
 inoremap <Space><Space> <Esc>0/<++><Enter>4xa
 
-inoremap { {}<Enter><++><Esc>k$i
-inoremap ( ()<++><Esc>4hi
-inoremap [ []<++><Esc>4hi
-inoremap ' ''<++><Esc>4hi
-inoremap " ""<++><Esc>4hi
-
 inoremap jk <Esc>:w<Enter>
 inoremap jj <Esc>
 
@@ -28,3 +22,7 @@ autocmd FileType c inoremap ;for for(<++>; <++>; <++>)<++><Esc>0i
 " Keymaps for Java files
 
 autocmd filetype java inoremap ;sopln System.out.println(<++>);<++>
+
+
+
+autocmd BufWritePost *.tex !~/Desktop/Scripts/compiler %
