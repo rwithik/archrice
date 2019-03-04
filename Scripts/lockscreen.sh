@@ -1,6 +1,4 @@
 #!/bin/bash
- 
-source ~/.cache/wal/colors.sh
 
 insidecolor=ffffff40
 ringcolor=ffffffff
