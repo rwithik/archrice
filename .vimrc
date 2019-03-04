@@ -25,4 +25,5 @@ autocmd filetype java inoremap ;sopln System.out.println(<++>);<++>
 
 
 
-autocmd BufWritePost *.tex !~/Desktop/Scripts/compiler %
+autocmd BufWritePost *.tex !~/Desktop/Scripts/latexCompiler %
+autocmd BufWritePost folders !~/Desktop/Scripts/shortcuts

@@ -80,7 +80,7 @@ gaps inner 5
 gaps outer 0
 
 # Remove window borders
-for_window [class="^.*"] border pixel 2
+for_window [class="^.*"] border pixel 1
 for_window [class="(?i)gsimplecal"] floating enable, move position, move down $height px
 
 # Scripts to be executed on startup
@@ -171,8 +171,8 @@ bindsym $mod+Shift+minus gaps outer all minus 10
 bindsym $mod+Shift+a gaps inner all set 6, gaps outer all set 0
 
 bindsym $mod+Shift+e exec prompt "Are you sure you want to shutdown?" "shutdown now"
-#bindsym $mod+l exec prompt "Lock Screen?" "/home/rwithik/Desktop/Scripts/lockscreen.sh"
-bindsym $mod+l exec prompt "Lock Screen?" "betterlockscreen -l blur"
+bindsym $mod+l exec prompt "Lock Screen?" "/home/rwithik/Desktop/Scripts/lockscreen.sh"
+#bindsym $mod+l exec prompt "Lock Screen?" "betterlockscreen -l blur"
 
 bindsym $mod+Shift+w exec --no-startup-id /home/rwithik/Desktop/Scripts/wallpaperScript.sh
 
@@ -237,7 +237,7 @@ bindsym $mod+Shift+p floating enable, resize set 600 340, move position 750 30, 
 bindsym $mod+z exec $term -n boxterm 
 bindsym $mod+Shift+z floating enable, resize set 535 160, move position 800 30
 
-bindsym $mod+Shift+m exec /home/rwithik/Desktop/Scripts/moveCenter.sh
+bindsym $mod+Shift+m move position center
 
 bindsym $mod+c exec --no-startup-id ~/Desktop/Scripts/sublime.sh
 

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-incorrect() {
+helptext() {
 	echo "new: Incorrect usage"
 	echo "Use flags to specify the type of file"
 	echo "Available Flags"
@@ -10,8 +10,8 @@ incorrect() {
 	echo "	--cpp: A new CPP template"
 	echo "	--python: A new Python template"
 	echo "	--bash: A new Bash template"
-	echo "	--texreport: A new LaTeX Report template [TODO]"
-	echo "	--texarticle: A new LaTeX Article template [TODO]"
+	echo "	--texreport: A new LaTeX Report template"
+	echo "	--texarticle: A new LaTeX Article template"
 }
 
 createFile() {
@@ -31,8 +31,14 @@ createFile() {
 		--bash )
 			cp ~/Templates/java ./$2.sh
 			;;
+		--texreport )
+			cp ~/Templates/texreport ./$2.sh
+			;;
+		--texarticle )
+			cp ~/Templates/texarticle ./$2.sh
+			;;
 		* )
-			incorrect
+			helptext
 			;;
 	esac
 }
@@ -45,13 +51,13 @@ if [[ $# -eq 3 ]]; then
 	elif [[ $2 == "-o" ]]; then
 		createFile $1 $3
 	else
-		incorrect
+		helptext
 	fi
 
 elif [[ $# -eq 1 ]]; then
 	createFile $1 "new"
 
 else
-	incorrect
+	helptext
 
 fi
