@@ -1,4 +1,11 @@
 #!/bin/bash
 
-`gdialog --title "Inputbox - To take input from you" --backtitle "Linux Shell Script Tutorial Example" --inputbox "Enter your name " 8 60 2`
+CHOICE=`cat ~/Desktop/Scripts/sites | dmenu -l 5`
 
+case $CHOICE in 
+	Search )
+		firefox --new-tab --search "`zenity --entry --text="Enter the search query"`" & disown
+		;;
+	* )
+		firefox --new-tab $CHOICE & disown
+esac

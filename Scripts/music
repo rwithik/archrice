@@ -1,8 +1,11 @@
 #!/bin/bash
 
-case $(echo -en "Artists\nMood\nRandomly Play Everything" | dmenu -l 3) in 
+case $(echo -en "Artists\nMood\nRandomly Play Everything\nMalayalam" | dmenu -l 4) in 
 	"Randomly Play Everything")
 		mpv --quiet --shuffle "/home/rwithik/Music/English/Everything.m3u"
+		;;
+	Malayalam)
+		mpv --quiet --shuffle "/home/rwithik/Music/Malayalam"
 		;;
 	Artists)
 		mpv --quiet --shuffle "/home/rwithik/Music/English/$(echo -en 'Alan Walker\nThe Chainsmokers\nMarshmello' | dmenu -l 3).m3u"

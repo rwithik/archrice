@@ -1,3 +1,5 @@
+# This script is shamelessly copied from multiple sources.
+
 #!/bin/bash
 
 insidecolor=ffffff40

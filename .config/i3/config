@@ -188,6 +188,7 @@ bindsym $mod+Shift+i exec $term -n floatterm -e ranger ~/wallpapers
 
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
+bindsym $mod+i exec ~/Desktop/Scripts/firefoxScript
 
 bindsym $mod+m exec $term -n music -e '/home/rwithik/Desktop/Scripts/music'
 #for_window[instance="music"] floating enable, set position center, move scratchpad, [instance=music] scratchpad show
