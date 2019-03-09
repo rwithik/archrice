@@ -1,0 +1,6 @@
+#!/bin/bash
+
+filename=`echo $1 | awk -F '.' '{print $1}'`
+
+# This script redirect the output to /dev/null and lets you know if there were any errors. Because I don't like cluttering my vim screen. Feel free to remove everything from the redirection if you want to see the command output.
+pandoc -f markdown -t html5 -c /home/rwithik/Templates/md.css --pdf-engine wkhtmltopdf ${filename}.md -o ${filename}.pdf >> /dev/null || echo "Errors were present"

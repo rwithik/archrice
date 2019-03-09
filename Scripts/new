@@ -32,10 +32,10 @@ createFile() {
 			cp ~/Templates/java ./$2.sh
 			;;
 		--texreport )
-			cp ~/Templates/texreport ./$2.sh
+			cp ~/Templates/texreport ./$2.tex
 			;;
 		--texarticle )
-			cp ~/Templates/texarticle ./$2.sh
+			cp ~/Templates/texarticle ./$2.tex
 			;;
 		* )
 			helptext

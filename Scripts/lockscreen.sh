@@ -24,7 +24,7 @@ convert /tmp/screen.png -scale 20% -scale 500% -fill "#$loginbox" -draw "rectang
 # dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
 i3lock \
-		-t -i /tmp/screen.png \
+		-n -t -i /tmp/screen.png \
 		--timepos='x+110:h-70' \
 		--datepos='x+43:h-45' \
 		--clock --date-align 1 --datestr "$locktext" \

@@ -76,11 +76,11 @@ set $ws10 "10"
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # i3 gaps
-gaps inner 5
+gaps inner 35
 gaps outer 0
 
 # Remove window borders
-for_window [class="^.*"] border pixel 1
+for_window [class="^.*"] border pixel 0
 for_window [class="(?i)gsimplecal"] floating enable, move position, move down $height px
 
 # Scripts to be executed on startup
@@ -152,7 +152,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+f fullscreen toggle
 
 bindsym $mod+d exec rofi -show run
-bindsym $mod+Shift+d exec dmenu_run
+bindsym $mod+Shift+d exec rofi -show window
 
 bindsym $mod+h split h
 bindsym $mod+v split v
@@ -168,7 +168,7 @@ bindsym $mod+Shift+plus gaps outer all plus 10
 bindsym $mod+minus gaps inner all minus 10
 bindsym $mod+Shift+minus gaps outer all minus 10
 
-bindsym $mod+Shift+a gaps inner all set 6, gaps outer all set 0
+bindsym $mod+Shift+a gaps inner all set 35, gaps outer all set 0
 
 bindsym $mod+Shift+e exec prompt "Are you sure you want to shutdown?" "shutdown now"
 bindsym $mod+l exec prompt "Lock Screen?" "/home/rwithik/Desktop/Scripts/lockscreen.sh"
@@ -199,9 +199,9 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 
 # Volume controls. Don't need this on Manjaro i3.
-# bindsym XF86AudioMute exec amixer set Master toggle
-# bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
-# bindsym XF86AudioLowerVolume exec amixer set Master 5%-
+bindsym XF86AudioMute exec amixer set Master toggle
+bindsym XF86AudioRaiseVolume exec amixer set Master 5%+
+bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 
 # Scratchpad controls
 bindsym $mod+Shift+grave move scratchpad
@@ -276,3 +276,5 @@ bar {
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
 }
+
+bindsym $mod+Shift+semicolon gaps inner current set 6, gaps outer current set 0
