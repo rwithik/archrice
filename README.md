@@ -18,17 +18,20 @@ I use wal to set up the color scheme for i3-wm, rofi, polybar, ..., bleh, pretty
 
 Why I use it: easily customizable prompts, useful plugins, looks better in general.
 
-Your typical `.zshrc`. A few extra aliases and functions. 
-* `alias cls=clear`
-* `alias pipes=pipes.sh`
-* `alias clock=tty-clock`
-* mkcd "\<directory\>": Will make a new directory named <directory> and cd into it.
-* psa "\<name\>": Will run `ps aux | grep <name>`
-* weather \<place\>: Will run `curl wttr.in/<place>`
+Your typical `.zshrc`. Additional aliases and functions are defined in the aliasrc and functionsrc files.  
+
+* mkcd "\<directory\>": Will make a new directory named <directory> and cd into it.  
+* psa "\<name\>": Will run `ps aux | grep <name>`  
+* weather \<place\>: Will run `curl wttr.in/<place>`  
+* ic: Opens the i3 config file in vim.  
+* vc: Opens .vimrc in vim.  
+* zc: Opens .zshrc in... you guessed it, vim.  
 
 And a few more...
 
 #### [Vim](https://www.vim.org)
+
+My .vimrc comes with a few keymaps for C, C++ and Java. Also saving LaTeX and Markdown files automatically compiles them to pdf. Also `jj` and `jk` are mapped to `<Esc>` and `<Esc>:w<Enter>` respectively.
 
 #### [i3-gaps](https://github.com/Airblader/i3)
 
@@ -36,7 +39,7 @@ And a few more...
 
 Your typical i3-gaps config. Uses wal colors.  
 Some key bindings were removed. For example, the resize mode was completely removed.  
-And lot of custom keybindings.  
+And lot of custom keybindings. And I mean a lot. Take a look at the i3-cheatsheet to some help.  
 
 #### [ranger](https://github.com/ranger/ranger)
 
@@ -75,9 +78,10 @@ Changes colors with wallpaper.
 
 #### [Scripts](https://github.com/rwithik/archrice/tree/master/Scripts)
 
-* lockscreen.sh: An i3-lock script that replaces the screen with a pixellated screenshot.
-* wallpaperScript: A script to change the wallpaper at regular intervals. You should probably use a crontab for this.
-* screenshot.sh: Takes a screenshot, moves it to ~/Pictures/Screenshots/, plays a shutter sound, and sends a notification. Mostly for aesthetic purposes.
-* todo.cpp: A todo app, minimal integration with dmenu
-* todoScript: A script that integrates the todo app with dmenu.
+* lockscreen.sh: An i3-lock script that replaces the screen with a pixellated screenshot.  
+* todo.cpp: A todo app, minimal integration with dmenu  
+* todoScript: A script that integrates the todo app with dmenu.  
+* mdCompiler and latexCompiler: Auto compiles LaTeX and markdown files when they are saved in vim.  
+* rangerScript and pcmanScript: Open a directory, selected through dmenu, in ranger or pcManFM. Requires ranger and pcManFM, obviously.
+* firefoxScript: Open a URL, selected through dmenu again, in a new tab in firefox. Can also open a search.  
 * prompt: A prompt using dmenu

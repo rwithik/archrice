@@ -16,4 +16,3 @@ alias zc='vim ~/.zshrc'
 
 alias :q=exit
 alias :wq=exit
-
