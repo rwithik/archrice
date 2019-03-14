@@ -23,8 +23,6 @@ autocmd FileType c inoremap ;for for(<++>; <++>; <++>)<++><Esc>0i
 
 autocmd filetype java inoremap ;sopln System.out.println(<++>);<++>
 
-
-
 autocmd BufWritePost *.tex !~/Desktop/Scripts/latexCompiler %
 autocmd BufWritePost folders !~/Desktop/Scripts/shortcuts
 autocmd BufWritePost *.md !~/Desktop/Scripts/mdCompiler %

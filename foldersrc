@@ -25,3 +25,4 @@ ss="cd ~/Pictures/Screenshots/ && ls -A" \
 tv="cd ~/Videos/Series/ && ls -A" \
 wp="cd ~/wallpapers/ && ls -A" \
 fl="cd ~/Projects/foss-lab/ && ls -A" \
+n="cd ~/Documents/Notes/ && ls -A" \
