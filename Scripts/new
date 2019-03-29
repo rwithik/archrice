@@ -20,16 +20,17 @@ createFile() {
 			cp ~/Templates/java ./$2.java
 			;;
 		--c )
-			cp ~/Templates/java ./$2.c
+			cp ~/Templates/c ./$2.c
 			;;
 		--cpp )
-			cp ~/Templates/java ./$2.cpp
+			cp ~/Templates/cpp ./$2.cpp
 			;;
 		--python )
-			cp ~/Templates/java ./$2.py
+			cp ~/Templates/python ./$2.py
 			;;
 		--bash )
-			cp ~/Templates/java ./$2.sh
+			cp ~/Templates/bash ./$2.sh
+			chmod +x ./$2.sh
 			;;
 		--texreport )
 			cp ~/Templates/texreport ./$2.tex

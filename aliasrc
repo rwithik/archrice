@@ -16,3 +16,5 @@ alias zc='vim ~/.zshrc'
 
 alias :q=exit
 alias :wq=exit
+
+alias pj="cd ~/Projects/\`ls -1 ~/Projects | dmenu -l 5\`"

@@ -1,0 +1,6 @@
+#!/bin/bash
+
+killall conky
+conky -c /home/rwithik/.config/conky/birthday_conky &&
+conky -c /home/rwithik/.config/conky/date_conky
+

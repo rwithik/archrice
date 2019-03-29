@@ -1,0 +1,21 @@
+conky.config = {
+	alignment = 'bl',
+	background = true,
+	color2 = '2ECC71',
+	cpu_avg_samples = 2,
+	default_color = 'FFFFFF',
+	double_buffer = true,
+	font = 'Bitstream Vera Sans:size=10',
+	gap_x = 30,
+	gap_y = 50,
+	minimum_width = 200,
+	no_buffers = true,
+	own_window = true,
+	own_window_type = 'override',
+	own_window_transparent = true,
+	update_interval = 21600,
+	use_xft = true,
+}
+conky.text = [[
+${execi 21600 python /home/rwithik/Programs/Python/birthdayScript.py}
+]]

@@ -16,6 +16,7 @@ set $mod Mod4
 # ==================================================
 
 set $term st
+# set $term st-big
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use 
@@ -92,9 +93,11 @@ exec redshift -O 5000
 #exec ~/.config/polybar/launch.sh
 #exec --no-startup-id $term -n dropdown &
 #exec --no-startup-id volumeicon
-exec --no-startup-id clipit
+#exec --no-startup-id clipit
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
+exec --no-startup-id xset -b
+exec --no-startup-id conky -c /home/rwithik/.config/conky/conkyrc
 
 
 # bindsym F1 [instance="dropdown"] scratchpad show, move position center
@@ -278,3 +281,4 @@ bar {
 }
 
 bindsym $mod+Shift+semicolon gaps inner current set 6, gaps outer current set 0
+ bindsym $mod+n exec llk
