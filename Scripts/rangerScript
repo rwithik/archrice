@@ -4,21 +4,23 @@ CHOICE=`echo -en "Desktop\nDownloads\nPrograms\nSeries\nCompetitive Coding\nProj
 
 case $CHOICE in
 	"Competitive Coding" )
-		st -n floatterm -e ranger ~/Programs/Competitive\ Coding/`echo -en "HackerRank\nHackerEarth\nCodeChef\nProject Euler" | dmenu -l 5`
+		DIR="~/Programs/Competitive Coding/`find ~/Programs/Competitive\ Coding -maxdepth 1 -type d | awk -F '/' '{print $6}' | dmenu -l 5`"
 		;;
 	Programs )
-		st -n floatterm -e ranger ~/Programs/`ls ~/Programs | sed '/^-/d;1d;s/.* //' | dmenu -l 5`
+		DIR=~/Programs/`find ~/Programs -maxdepth 1 -type d | awk -F '/' '{print $5}' | dmenu -l 5`
 		;;
 	Projects )
-		st -n floatterm -e ranger ~/Projects/`ls ~/Projects | sed '/^-/d;1d;s/.* //' | dmenu -l 5`
+		DIR=~/Projects/`find ~/Projects/ -maxdepth 1 -type d | awk -F '/' '{print $4}' | dmenu -l 5`
 		;;
 	Other )
-		st -n floatterm -e ranger ~/`ls ~| sed '/^-/d;1d;s/.* //' | dmenu -l 5`
+		DIR=~/`find ~ -maxdepth 1 -type d | awk -F '/' '{print $4}' | dmenu -l 5`
 		;;
 	Series )
-		st -n floatterm -e ranger ~/Videos/Series
+		DIR="~/Videos/Series/`find ~/Videos/Series/ -maxdepth 1 -type d | awk -F '/' '{print $6}' | dmenu -l 5`"
 		;;
 	* )
-		st -n floatterm -e ranger ~/$CHOICE
+		DIR=~/$CHOICE
 		;;
 esac
+
+st -n floatterm -e ranger $DIR
