@@ -64,14 +64,14 @@ floating_modifier $mod
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
 set $ws1 "1:firefox"
-set $ws2 "2:coding"
-set $ws3 "3:terminals"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9:music"
+set $ws2 "2:code"
+set $ws3 "3:git"
+set $ws4 "4:terminal"
+set $ws5 "5:terminal"
+set $ws6 "6:terminal"
+set $ws7 "7:terminal"
+set $ws8 "8:terminal"
+set $ws9 "9:spotify"
 set $ws10 "10:random"
 
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"

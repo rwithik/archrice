@@ -10,7 +10,6 @@ export ZSH="/home/rwithik/.oh-my-zsh"
 #ZSH_THEME="half-life" # Really good. Just make it two lined.
 #ZSH_THEME="lukerandall"
 ZSH_THEME="mytheme"
-#ZSH_THEME="avit"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -103,3 +102,4 @@ export NVM_DIR="/home/rwithik/.nvm"
 [ -f "$HOME/archrice/aliasrc" ] && source $HOME/archrice/aliasrc
 [ -f "$HOME/archrice/functionsrc" ] && source $HOME/archrice/functionsrc
 [ -f "$HOME/archrice/foldersrc" ] && source $HOME/archrice/foldersrc
+source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
