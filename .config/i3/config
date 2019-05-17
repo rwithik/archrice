@@ -97,7 +97,7 @@ exec redshift -O 5000
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xset -b
-exec --no-startup-id conky -c /home/rwithik/.config/conky/conkyrc
+exec --no-startup-id /home/rwithik/Desktop/Scripts/conky_start
 
 
 # bindsym F1 [instance="dropdown"] scratchpad show, move position center
@@ -244,6 +244,10 @@ bindsym $mod+Shift+z floating enable, resize set 535 160, move position 800 30
 bindsym $mod+Shift+m move position center
 
 bindsym $mod+c exec --no-startup-id ~/Desktop/Scripts/sublime.sh
+
+bindsym XF86AudioPrev exec playerctl previous
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
 
 for_window [instance=floatterm] floating enable, resize set 780 520, move position center
 for_window [instance=boxterm] floating enable, resize set 535 160, move position 800 30
