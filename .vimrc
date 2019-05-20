@@ -8,8 +8,8 @@ syntax on
 filetype indent on
 
 "General Keymaps
-noremap <Space><Space> 0/<++><Enter>4xa
-inoremap <Space><Space> <Esc>0/<++><Enter>4xa
+noremap <Space><Space> 0/<++><Enter>4xha
+inoremap <Space><Space> <Esc>0/<++><Enter>4xha
 
 inoremap jk <Esc>:w<Enter>
 inoremap jj <Esc>

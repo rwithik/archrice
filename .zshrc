@@ -9,7 +9,8 @@ export ZSH="/home/rwithik/.oh-my-zsh"
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
 #ZSH_THEME="half-life" # Really good. Just make it two lined.
 #ZSH_THEME="lukerandall"
-ZSH_THEME="mytheme"
+#ZSH_THEME="mytheme"
+ZSH_THEME="simple"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
