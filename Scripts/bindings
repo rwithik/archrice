@@ -1,5 +1,7 @@
 #!/bin/bash
 
+# A script to print all the keybindings in the i3 config file with pretty minimal formatting
+
 cat ~/.config/i3/config | \
 		egrep "^bindsym.*" | \
 		awk '{printf "%-25s", $2; $1 = ""; $2 = ""; printf "%s\n", $0}' | \

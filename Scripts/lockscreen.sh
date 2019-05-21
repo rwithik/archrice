@@ -1,6 +1,6 @@
-# This script is shamelessly copied from multiple sources.
-
 #!/bin/bash
+
+# This script is shamelessly copied from multiple sources.
 
 insidecolor=ffffff40
 ringcolor=ffffffff
@@ -23,8 +23,10 @@ convert /tmp/screen.png -scale 20% -scale 500% -fill "#$loginbox" -draw "rectang
 [[ -f $1 ]] && convert /tmp/screen.png $1 -gravity center -composite -matte /tmp/screen.png
 # dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
+playerctl pause
+
 i3lock \
-		-n -t -i /tmp/screen.png \
+		-t -i /tmp/screen.png \
 		--timepos='x+110:h-70' \
 		--datepos='x+43:h-45' \
 		--clock --date-align 1 --datestr "$locktext" \
@@ -37,7 +39,4 @@ i3lock \
 		--time-font="$font" --date-font="$font" --layout-font="$font" --verif-font="$font" --wrong-font="$font" \
 		--noinputtext='' --force-clock $lockargs
 
-# i3lock -n -i /tmp/screen.png
-# blurlock
-notify-send "Welcome back, ${USER}!"
 rm /tmp/screen.png
