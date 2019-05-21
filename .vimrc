@@ -1,3 +1,4 @@
+execute pathogen#infect()
 set autoindent
 set showcmd
 set tabstop=4
@@ -26,3 +27,8 @@ autocmd filetype java inoremap ;sopln System.out.println(<++>);<++>
 autocmd BufWritePost *.tex !~/Desktop/Scripts/latexCompiler %
 autocmd BufWritePost folders !~/Desktop/Scripts/shortcuts
 autocmd BufWritePost *.md !~/Desktop/Scripts/mdCompiler %
+
+" vim-markdown settings
+" https://github.com/plasticboy/vim-markdown
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_math = 1
