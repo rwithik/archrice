@@ -12,6 +12,7 @@ export ZSH="/home/rwithik/.oh-my-zsh"
 #ZSH_THEME="mytheme"
 #ZSH_THEME="simple"
 ZSH_THEME="agnoster-edited"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random

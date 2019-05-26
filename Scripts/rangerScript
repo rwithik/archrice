@@ -4,7 +4,7 @@ CHOICE=`echo -en "Desktop\nDownloads\nPrograms\nSeries\nCompetitive Coding\nProj
 
 case $CHOICE in
 	"Competitive Coding" )
-		DIR="~/Programs/Competitive Coding/`find ~/Programs/Competitive\ Coding -maxdepth 1 -type d | awk -F '/' '{print $6}' | dmenu -l 5`"
+		DIR="~/Programs/Competitive\ Coding/`find ~/Programs/Competitive\ Coding -maxdepth 1 -type d | awk -F '/' '{print $6}' | dmenu -l 5`"
 		;;
 	Programs )
 		DIR=~/Programs/`find ~/Programs -maxdepth 1 -type d | awk -F '/' '{print $5}' | dmenu -l 5`
@@ -22,5 +22,6 @@ case $CHOICE in
 		DIR=~/$CHOICE
 		;;
 esac
-
-st -n floatterm -e ranger $DIR
+#DIR=`echo $DIR | tr ' ' '\ '`
+#st -n floatterm -e ranger $DIR
+ranger "$DIR"

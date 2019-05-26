@@ -19,7 +19,7 @@ font="sans-serif"
 locktext='Type password to unlock...'
 
 scrot /tmp/screen.png
-convert /tmp/screen.png -scale 20% -scale 500% -fill "#$loginbox" -draw "rectangle 30,738 330,658 " /tmp/screen.png
+convert /tmp/screen.png -scale 25% -scale 400% -fill "#$loginbox" -draw "rectangle 30,738 330,658 " /tmp/screen.png
 [[ -f $1 ]] && convert /tmp/screen.png $1 -gravity center -composite -matte /tmp/screen.png
 # dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Stop
 
