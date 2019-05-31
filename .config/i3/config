@@ -87,6 +87,7 @@ for_window [class="(?i)gsimplecal"] floating enable, move position, move down $h
 # Scripts to be executed on startup
 #exec compton -cCGf -b -i 0.75 --vsync opengl --opacity-rule '99:name *= "Firefox"'
 exec --no-startup-id compton -b
+#exec polybar bar &
 exec wal -i /home/rwithik/wallpapers/Landscapes/
 exec xrdb ~/.Xresources
 exec redshift -O 5000
@@ -286,3 +287,4 @@ bar {
 
 bindsym $mod+Shift+semicolon gaps inner current set 6, gaps outer current set 0
  bindsym $mod+n exec llk
+#for_window [urgent=latest] exec "notify-send Hello, i3"
