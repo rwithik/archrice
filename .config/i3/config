@@ -16,6 +16,7 @@ set $mod Mod4
 # ==================================================
 
 set $term st
+set $rangerterm st-ranger
 # set $term st-big
 
 # Set colors from Xresources
@@ -66,11 +67,11 @@ floating_modifier $mod
 set $ws1 "1:firefox"
 set $ws2 "2:code"
 set $ws3 "3:git"
-set $ws4 "4:terminal"
-set $ws5 "5:terminal"
-set $ws6 "6:terminal"
-set $ws7 "7:terminal"
-set $ws8 "8:terminal"
+set $ws4 "4"
+set $ws5 "5"
+set $ws6 "6"
+set $ws7 "7"
+set $ws8 "8"
 set $ws9 "9:spotify"
 set $ws10 "10:random"
 
@@ -85,16 +86,17 @@ for_window [class="^.*"] border pixel 0
 for_window [class="(?i)gsimplecal"] floating enable, move position, move down $height px
 
 # Scripts to be executed on startup
-#exec compton -cCGf -b -i 0.75 --vsync opengl --opacity-rule '99:name *= "Firefox"'
+# exec compton -cCGf -b -i 0.75 --vsync opengl --opacity-rule '99:name *= "Firefox"'
 exec --no-startup-id compton -b
-#exec polybar bar &
-exec wal -i /home/rwithik/wallpapers/Landscapes/
+# exec polybar bar &
+# Uncomment the line below, if the conly script isnot run on startup to set the wallpaper
+# exec wal -i /home/rwithik/wallpapers/Landscapes/
 exec xrdb ~/.Xresources
 exec redshift -O 5000
-#exec ~/.config/polybar/launch.sh
-#exec --no-startup-id $term -n dropdown &
-#exec --no-startup-id volumeicon
-#exec --no-startup-id clipit
+# exec ~/.config/polybar/launch.sh
+# exec --no-startup-id $term -n dropdown &
+# exec --no-startup-id volumeicon
+# exec --no-startup-id clipit
 exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xset -b
@@ -184,17 +186,17 @@ bindsym $mod+t exec ~/Desktop/Scripts/todoScript
 bindsym $mod+Shift+t exec todo -d
 for_window [instance=TODO] floating enable, set position center
 
-bindsym $mod+r exec $term -n floatterm -e ranger
+bindsym $mod+r exec $rangerterm -n floatterm -e ranger
 #bindsym $mod+F3 exec $term -e "zsh -c '~/Desktop/Scripts/rangerScript'"
 bindsym $mod+F3 exec ~/Desktop/Scripts/rangerScript
 bindsym $mod+Shift+F3 exec ~/Desktop/Scripts/pcmanScript
-bindsym $mod+Shift+i exec $term -n floatterm -e ranger ~/wallpapers
+bindsym $mod+Shift+i exec $rangerterm -n floatterm -e ranger ~/wallpapers
 
 bindsym $mod+b exec --no-startup-id firefox
 bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
 bindsym $mod+i exec ~/Desktop/Scripts/firefoxScript
 
-bindsym $mod+m exec $term -n music -e '/home/rwithik/Desktop/Scripts/music'
+bindsym $mod+m exec $rangerterm -n music -e '/home/rwithik/Desktop/Scripts/music'
 #for_window[instance="music"] floating enable, set position center, move scratchpad, [instance=music] scratchpad show
 for_window[instance="music"] floating enable, move position 400 0, resize set 566 45, move scratchpad
 
@@ -250,12 +252,16 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioNext exec playerctl next
 
+bindsym $mod+semicolon bar mode toggle
+bindsym $mod+Shift+semicolon gaps inner current set 6, gaps outer current set 0
+
 for_window [instance=floatterm] floating enable, resize set 780 520, move position center
 for_window [instance=boxterm] floating enable, resize set 535 160, move position 800 30
 for_window [instance=pipterm] floating enable, resize set 600 340, move position 750 30
 
 bar {
-	font pango:DejaVu Sans Mono, FontAwesome 9
+#	font pango:DejaVu Sans Mono, FontAwesome 9
+	font pango:Source Code Pro, FontAwesome 9
 	i3bar_command i3bar
 	status_command i3blocks -c .config/i3blocks/i3blocks.conf
 #	status_command i3blocks -c .config/i3blocks.conf
@@ -285,6 +291,5 @@ bar {
     }
 }
 
-bindsym $mod+Shift+semicolon gaps inner current set 6, gaps outer current set 0
  bindsym $mod+n exec llk
 #for_window [urgent=latest] exec "notify-send Hello, i3"

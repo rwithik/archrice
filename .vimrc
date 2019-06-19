@@ -1,4 +1,4 @@
-let mapleader =","
+let mapleader =";"
 
 execute pathogen#infect()
 
@@ -15,20 +15,31 @@ filetype indent on
 " General Keymaps
 	inoremap <leader><leader> <Esc>/<++><Enter>"_c4l
 	vnoremap <leader><leader> <Esc>/<++><Enter>"_c4l
-	map <leader><leader> <Esc>/<++><Enter>"_c4l
+	noremap <leader><leader> <Esc>/<++><Enter>"_c4l
 	inoremap jk <Esc>:w<Enter>
 	inoremap jj <Esc>
 	map <leader>s :setlocal spell! spelllang=en_us<CR>
+	inoremap <leader>g <++>
+	noremap <leader>g a<++><Esc>
 
 " Keymaps for C Files
 
-	autocmd FileType c inoremap ;p printf("<++>", );<++><Esc>0
-	autocmd FileType c inoremap ;for for(<++>; <++>; <++>){<Enter><++><Enter>}<Esc>2k0i
+	autocmd FileType c inoremap <leader>p printf("<++>", );<++><Esc>0
+	autocmd FileType c inoremap <leader>for for(<++>; <++>; <++>){<Enter><++><Enter>}<Esc>2k0i
+
+" Keymaps for CPP files
+
+	autocmd FileType cpp inoremap <leader>o cout << ;<Enter><++><Esc>kf;i
+	autocmd FileType cpp inoremap <leader>i cin >> ;<Enter><++><Esc>kf;i
+	autocmd FileType cpp inoremap <leader>v vector<> <++>;<Enter><++><Esc>kf>i
+	autocmd FileType cpp inoremap <leader>fl for (; <++>; <++>){<Enter><++><Enter>}<Esc>2k0f(a
+	autocmd FileType cpp inoremap <leader>vfl for (: <++>){<Enter><++><Enter>}<Esc>2k0f(a
+
 
 " Keymaps for Java files
 
-	autocmd filetype java inoremap ;sopln System.out.println(<++>);<++>
-	autocmd FileType java inoremap ;for for(<++>; <++>; <++>){<Enter><++><Enter>}<Esc>2k0i
+	autocmd filetype java inoremap <leader>sopln System.out.println(<++>);<++>
+	autocmd FileType java inoremap <leader>for for(<++>; <++>; <++>){<Enter><++><Enter>}<Esc>2k0i
 
 " Keymaps for LaTaX
 
@@ -70,7 +81,19 @@ filetype indent on
 	autocmd filetype tex inoremap <leader>c <Esc>:w! \| !latexc <c-r>%<CR><CR>a
 	autocmd BufWritePost folders !~/Desktop/Scripts/shortcuts
 
+" Surrounding Mappings
+	" Only works for selections on a single line.
+
+	vnoremap <leader>( xa()<Esc>P
+	vnoremap <leader>{ xa{}<Esc>P
+	vnoremap <leader>[ xa[]<Esc>P
+	autocmd filetype markdown vnoremap <leader>b xa****<Esc>hP
+	autocmd filetype markdown vnoremap <leader>e xa**<Esc>P
+	autocmd filetype markdown vnoremap <leader>m xa$$<Esc>P
+
 " vim-markdown settings
 " https://github.com/plasticboy/vim-markdown
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
+
+" autocmd VimEnter :echo ^.^

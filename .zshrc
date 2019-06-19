@@ -106,3 +106,6 @@ export NVM_DIR="/home/rwithik/.nvm"
 [ -f "$HOME/archrice/functionsrc" ] && source $HOME/archrice/functionsrc
 [ -f "$HOME/archrice/foldersrc" ] && source $HOME/archrice/foldersrc
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+export PATH="$PATH:/home/rwithik/bin/"
+
