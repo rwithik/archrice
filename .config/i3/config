@@ -28,6 +28,14 @@ set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 set_from_resource $border_inactive i3wm.color1 #f0f0f0
 set_from_resource $border_active i3wm.color6 #f0f0f0
+set_from_resource $color0 i3wm.color0 #f0f0f0
+set_from_resource $color1 i3wm.color1 #f0f0f0
+set_from_resource $color2 i3wm.color2 #f0f0f0
+set_from_resource $color3 i3wm.color3 #f0f0f0
+set_from_resource $color4 i3wm.color4 #f0f0f0
+set_from_resource $color5 i3wm.color5 #f0f0f0
+set_from_resource $color6 i3wm.color6 #f0f0f0
+set_from_resource $color7 i3wm.color7 #f0f0f0
 
 # class                 border  			backgr. text 	indicator child_border
 client.focused          $border_active     	$bg     $fg  	$bg       $border_active
@@ -278,14 +286,18 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-        background #283339
+#        background #283339
+		background $color0
         statusline #F9FAF9
         separator  #454947
 
 #                    	   border  backgr. text
         focused_workspace  #F9FAF9 #16a085 #292F34
-        active_workspace   #595B5B #353836 #FDF6E3
-        inactive_workspace #595B5B #283339 #EEE8D5
+        focused_workspace  #F9FAF9 $color15	   $color0
+#        active_workspace   #595B5B #353836 #FDF6E3
+        active_workspace   #595B5B $fg $bg
+#		inactive_workspace #595B5B #283339 #EEE8D5
+        inactive_workspace #595B5B $bg $fg
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
