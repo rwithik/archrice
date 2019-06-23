@@ -52,7 +52,7 @@ client.background       $bg
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono 8
+font pango:Source Code Pro 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -72,16 +72,16 @@ floating_modifier $mod
 
 # Define names for default workspaces for which we configure key bindings later on.
 # We use variables to avoid repeating the names in multiple places.
-set $ws1 "1:firefox"
-set $ws2 "2:code"
-set $ws3 "3:git"
-set $ws4 "4"
-set $ws5 "5"
-set $ws6 "6"
-set $ws7 "7"
-set $ws8 "8"
-set $ws9 "9:spotify"
-set $ws10 "10:random"
+set $ws1 "1:"
+set $ws2 "2:"
+set $ws3 "3:"
+set $ws4 "4:"
+set $ws5 "5:"
+set $ws6 "6:"
+set $ws7 "7:"
+set $ws8 "8:"
+set $ws9 "9:"
+set $ws10 "10:"
 
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
@@ -288,16 +288,17 @@ bar {
     colors {
 #        background #283339
 		background $color0
-        statusline #F9FAF9
+#        statusline #F9FAF9
+        statusline $color7
         separator  #454947
 
 #                    	   border  backgr. text
         focused_workspace  #F9FAF9 #16a085 #292F34
-        focused_workspace  #F9FAF9 $color15	   $color0
+        focused_workspace  $color0 $color7	   $color0
 #        active_workspace   #595B5B #353836 #FDF6E3
-        active_workspace   #595B5B $fg $bg
+        active_workspace   $color7 $color2 $color7
 #		inactive_workspace #595B5B #283339 #EEE8D5
-        inactive_workspace #595B5B $bg $fg
+        inactive_workspace #color7 $color2 $color7
         binding_mode       #16a085 #2C2C2C #F9FAF9
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }

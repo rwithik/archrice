@@ -2,7 +2,7 @@
 #----------------------------------------------------------------------------------------------------
 #Check internet connectivity through ping exit code
 if ping -c 1 8.8.8.8 > /dev/null 2>&1; then
-	echo "<span foreground='green'>Link Up</span>"; 
+	echo "<span foreground='green'></span>"; 
 else
-	echo "<span foreground='red'>Link Down</span>";
+	echo "<span foreground='red'></span>";
 fi

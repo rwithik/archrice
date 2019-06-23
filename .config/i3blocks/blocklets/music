@@ -6,9 +6,9 @@
 [[ "$(playerctl status 2>&1)" = "No players found" ]] && exit 33;
 
 # Define cursor icons
-playIcon="";
-pauseIcon=" ⏸";
-stopIcon=" ⏹";
+playIcon=" ";
+pauseIcon=" ";
+stopIcon=" ";
 
 #User provided args for playerctl
 ARGUMENTS="$INSTANCE";
@@ -27,7 +27,8 @@ playerStatus=$(playerctl $ARGUMENTS status);
 songArtist="$(playerctl $ARGUMENTS metadata artist)";
 songArtist="${songArtist:-(Unknown Artist)}";
 songTitle=$(playerctl $ARGUMENTS metadata title);
-songInfo="$songArtist - $songTitle";
+# songInfo="$songArtist - $songTitle";
+songInfo=" $songTitle";
 songDuration="";
 elapsedTime=$(playerctl metadata --format "{{ duration(position) }}");
 songLength=$(playerctl metadata --format "{{ duration(mpris:length) }}");
