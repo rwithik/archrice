@@ -182,8 +182,6 @@ bindsym $mod+Shift+plus gaps outer all plus 10
 bindsym $mod+minus gaps inner all minus 10
 bindsym $mod+Shift+minus gaps outer all minus 10
 
-bindsym $mod+Shift+a gaps inner all set 35, gaps outer all set 0
-
 bindsym $mod+Shift+e exec prompt "Are you sure you want to shutdown?" "shutdown now"
 bindsym $mod+l exec prompt "Lock Screen?" "/home/rwithik/Desktop/Scripts/lockscreen.sh"
 #bindsym $mod+l exec prompt "Lock Screen?" "betterlockscreen -l blur"
@@ -262,6 +260,7 @@ bindsym XF86AudioNext exec playerctl next
 
 bindsym $mod+semicolon bar mode toggle
 bindsym $mod+Shift+semicolon gaps inner current set 6, gaps outer current set 0
+bindsym $mod+Shift+a gaps inner current set 35, gaps outer all set 0
 
 for_window [instance=floatterm] floating enable, resize set 780 520, move position center
 for_window [instance=boxterm] floating enable, resize set 535 160, move position 800 30
