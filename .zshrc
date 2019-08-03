@@ -109,3 +109,4 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 
 export PATH="$PATH:/home/rwithik/bin/"
 
+unsetopt histverify

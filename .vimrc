@@ -41,13 +41,14 @@ filetype indent on
 	autocmd filetype java inoremap <leader>sopln System.out.println(<++>);<++>
 	autocmd FileType java inoremap <leader>for for(<++>; <++>; <++>){<Enter><++><Enter>}<Esc>2k0i
 
-" Keymaps for LaTaX
+" Keymaps for LaTeX
 
 	autocmd filetype tex inoremap <leader><Enter> \\newline<Enter>
-	autocmd filetype tex inoremap <leader>i \\includegraphics[width=\\linewidth]{<++>}\\newline<Esc>0
+	autocmd filetype tex inoremap <leader>i \includegraphics[width=\linewidth]{<++>}\newline<Esc>0
 	autocmd filetype tex inoremap <leader>em \emph{}<++><Esc>T{i
 	autocmd filetype tex inoremap <leader>it \textit{}<++><Esc>T{i
 	autocmd filetype tex inoremap <leader>bf \textbf{}<++><Esc>T{i
+	autocmd filetype tex inoremap <leader>v \begin{verbatim}<++><Enter>\end{verbatim}<Enter><++><Esc>T{i
 	autocmd filetype tex inoremap <leader>ol \begin{enumerate}<Enter><Enter>\end{enumerate}<Enter><Enter><++><Esc>3kA\item<Enter>\item <++><Enter>\item <++><Esc>2kA
 	autocmd filetype tex inoremap <leader>ul \begin{itemize}<Enter><Enter>\end{itemize}<Enter><Enter><++><Esc>3kA\item <Enter>\item <++><Enter>\item <++><Esc>2kA
 	autocmd filetype tex inoremap <leader>li \item<Space>
