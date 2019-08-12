@@ -176,8 +176,8 @@ bindsym $mod+Shift+k resize grow height 5 px or 5 ppt
 bindsym $mod+Shift+j resize shrink height 5 px or 5 ppt
 bindsym $mod+Shift+l resize grow width 5 px or 5 ppt
 
-bindsym $mod+plus gaps inner all plus 10
-bindsym $mod+Shift+plus gaps outer all plus 10
+bindsym $mod+plus gaps inner current plus 10
+bindsym $mod+Shift+plus gaps outer current plus 10
 
 bindsym $mod+minus gaps inner all minus 10
 bindsym $mod+Shift+minus gaps outer all minus 10
@@ -269,7 +269,7 @@ for_window [instance=pipterm] floating enable, resize set 600 340, move position
 bar {
 #	font pango:DejaVu Sans Mono, FontAwesome 9
 	font pango:Source Code Pro, FontAwesome 9
-	i3bar_command i3bar
+	i3bar_command i3bar -t
 	status_command i3blocks -c .config/i3blocks/i3blocks.conf
 #	status_command i3blocks -c .config/i3blocks.conf
 #	status_command ~/.config/polybar/launch.sh
@@ -285,8 +285,8 @@ bar {
 	strip_workspace_numbers yes
 
     colors {
-#        background #283339
-		background $color0
+        background #28333900
+#		background $color0
 #        statusline #F9FAF9
         statusline $color7
         separator  #454947
