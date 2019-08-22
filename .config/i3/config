@@ -183,7 +183,7 @@ bindsym $mod+minus gaps inner all minus 10
 bindsym $mod+Shift+minus gaps outer all minus 10
 
 bindsym $mod+Shift+e exec prompt "Are you sure you want to shutdown?" "shutdown now"
-bindsym $mod+l exec prompt "Lock Screen?" "/home/rwithik/Desktop/Scripts/lockscreen.sh"
+bindsym $mod+l exec /home/rwithik/Desktop/Scripts/lockscreen.sh
 #bindsym $mod+l exec prompt "Lock Screen?" "betterlockscreen -l blur"
 
 bindsym $mod+Shift+w exec --no-startup-id /home/rwithik/Desktop/Scripts/wallpaperScript.sh
@@ -305,3 +305,4 @@ bar {
 
  bindsym $mod+n exec llk
 #for_window [urgent=latest] exec "notify-send Hello, i3"
+
