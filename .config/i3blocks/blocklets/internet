@@ -1,9 +1,12 @@
 #!/bin/bash
 #----------------------------------------------------------------------------------------------------
+
+ssid=`iwgetid -r`
+
 #Check internet connectivity through ping exit code
 if ping -c 1 8.8.8.8 > /dev/null 2>&1; then
 	local_ip=`ip addr | grep 192.168 | awk '{print $2}' | awk -F '/' '{print $1}'`
-	echo "<span foreground='green'> ${local_ip}</span>"; 
+	echo "<span foreground='#93ff87'> ${local_ip}</span>"; 
 else
 	echo "<span foreground='red'>no internet</span>";
 fi

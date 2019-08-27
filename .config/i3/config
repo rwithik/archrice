@@ -83,6 +83,17 @@ set $ws8 "8:"
 set $ws9 "9:"
 set $ws10 "10:"
 
+# set $ws1 "1:I"
+# set $ws2 "2:II"
+# set $ws3 "3:III"
+# set $ws4 "4:IV"
+# set $ws5 "5:V"
+# set $ws6 "6:VI"
+# set $ws7 "7:VII"
+# set $ws8 "8:VIII"
+# set $ws9 "9:IX"
+# set $ws10 "10:X"
+
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # i3 gaps
@@ -90,7 +101,7 @@ gaps inner 35
 gaps outer 0
 
 # Remove window borders
-for_window [class="^.*"] border pixel 0
+for_window [class="^.*"] border pixel 1
 for_window [class="(?i)gsimplecal"] floating enable, move position, move down $height px
 
 # Scripts to be executed on startup
@@ -101,6 +112,7 @@ exec --no-startup-id compton -b
 # exec wal -i /home/rwithik/wallpapers/Landscapes/
 exec xrdb ~/.Xresources
 exec redshift -O 5000
+exec wal -R
 # exec ~/.config/polybar/launch.sh
 # exec --no-startup-id $term -n dropdown &
 # exec --no-startup-id volumeicon
@@ -223,6 +235,7 @@ bindsym $mod+asciitilde scratchpad show
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print exec --no-startup-id i3scrot -s
+bindsym $mod+F8 exec --no-startup-id /home/rwithik/Desktop/Scripts/display.sh
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle 
@@ -266,6 +279,11 @@ for_window [instance=floatterm] floating enable, resize set 780 520, move positi
 for_window [instance=boxterm] floating enable, resize set 535 160, move position 800 30
 for_window [instance=pipterm] floating enable, resize set 600 340, move position 750 30
 
+# Workspace assignments
+
+assign [class="org-tlauncher-tlauncher-rmo-TLauncher"] $ws2
+assign [class="Minecraft 1.14.4"] $ws2
+
 bar {
 #	font pango:DejaVu Sans Mono, FontAwesome 9
 	font pango:Source Code Pro, FontAwesome 9
@@ -292,14 +310,17 @@ bar {
         separator  #454947
 
 #                    	   border  backgr. text
-        focused_workspace  #F9FAF9 #16a085 #292F34
-        focused_workspace  $color0 $color7	   $color0
-#        active_workspace   #595B5B #353836 #FDF6E3
-        active_workspace   $color7 $color2 $color7
-#		inactive_workspace #595B5B #283339 #EEE8D5
-        inactive_workspace #color7 $color2 $color7
-        binding_mode       #16a085 #2C2C2C #F9FAF9
-        urgent_workspace   #16a085 #FDF6E3 #E5201D
+# #        focused_workspace  #F9FAF9 #16a085 #292F34
+#         focused_workspace  $color0 $color7	   $color0
+# #        active_workspace   #595B5B #353836 #FDF6E3
+#         active_workspace   $color7 $color2 $color7
+# #		inactive_workspace #595B5B #283339 #EEE8D5
+#         inactive_workspace #color7 $color2 $color7
+         binding_mode       #16a085 #2C2C2C #F9FAF9
+         urgent_workspace   #16a085 #FDF6E3 #E5201D
+		focused_workspace #F9FAF9 #00000000 $color7
+		active_workspace #F9FAF9 #00000000 $color7
+		inactive_workspace #595B5B #00000000 $color7
     }
 }
 

@@ -8,4 +8,4 @@ rofi.lines: 10
 rofi.cycle: true
 rofi.case-sensitivity: false
 rofi.fake-background: screenshot
-rofi.theme: /usr/share/rofi/themes/sidebar.rasi
+rofi.theme: /usr/share/rofi/themes/adapta-custom.rasi
