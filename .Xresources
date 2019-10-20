@@ -38,3 +38,6 @@ URxvt*font:	xft:Inconsolata:size=11
 ! Urxvt.boldFont: ttf:Inconsolata-13
 ! Urxvt.letterSpace: 		3 
 ! URxvt.font: ttf:FontAwesome-14
+
+
+rofi.case-sensitive:                 false

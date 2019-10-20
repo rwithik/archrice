@@ -1,0 +1,22 @@
+conky.config = {
+alignment = 'tr',
+background = true,
+color2 = '2ECC71',
+cpu_avg_samples = 2,
+default_color = 'FFFFFF',
+double_buffer = true,
+font = 'monospace:size=10',
+gap_x = 30,
+gap_y = 50,
+minimum_width = 200,
+no_buffers = true,
+own_window = true,
+own_window_type = 'override',
+own_window_transparent = true,
+update_interval = 21600,
+use_xft = true,
+}
+conky.text = [[
+${execi 21600 cat /home/rwithik/archrice/.config/conky/todo.tasks}
+]]
+

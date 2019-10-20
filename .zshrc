@@ -111,3 +111,8 @@ source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zs
 export PATH="$PATH:/home/rwithik/bin/"
 
 unsetopt histverify
+
+# Keybindings
+
+bindkey -s '' 'sudo !!'
+bindkey -s 'fuck' 'OA[1~sudo [4~'
