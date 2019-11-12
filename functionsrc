@@ -19,6 +19,7 @@ jc(){
 	javac ${1}.java && java $*
 }
 
+# Taken from the manjaro .bashrc
 ex ()
 {
   if [ -f $1 ] ; then
@@ -41,6 +42,14 @@ ex ()
   fi
 }
 
+gssh ()
+{
+	killall ssh-agent > /dev/null
+	echo "Spawning the ssh-agent.."
+	eval "$(ssh-agent -s)"
+	ssh-add
+	echo -e "You will not be prompted for the passphrase again in this session."
+}
 
 vcd () {
     tmp="$(mktemp)"
