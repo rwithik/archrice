@@ -99,6 +99,9 @@ set $ws10 "10:"
 # i3 gaps
 gaps inner 35
 gaps outer 0
+workspace $ws1 gaps inner 6
+workspace $ws1 gaps outer 0
+
 
 # Remove window borders
 for_window [class="^.*"] border pixel 1
@@ -121,7 +124,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xset -b
 exec --no-startup-id /home/rwithik/Desktop/Scripts/conky_start
-
+# exec xdotool behave_screen_edge --delay 1000 bottom-left exec /home/rwithik/Desktop/Scripts/lockscreen.sh
 
 # bindsym F1 [instance="dropdown"] scratchpad show, move position center
 

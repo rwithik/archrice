@@ -12,8 +12,8 @@ export ZSH="/home/rwithik/.oh-my-zsh"
 #ZSH_THEME="mytheme"
 #ZSH_THEME="simple"
 #ZSH_THEME="agnoster-edited"
-ZSH_THEME="garyblessington-edited"
-#ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="garyblessington-edited"
+ZSH_THEME="powerlevel9k/powerlevel9k"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -108,7 +108,7 @@ export NVM_DIR="/home/rwithik/.nvm"
 [ -f "$HOME/archrice/foldersrc" ] && source $HOME/archrice/foldersrc
 source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
-export PATH="$PATH:/home/rwithik/bin/"
+
 
 unsetopt histverify
 
@@ -116,3 +116,11 @@ unsetopt histverify
 
 bindkey -s '' 'sudo !!'
 bindkey -s 'fuck' 'OA[1~sudo [4~'
+
+
+# Powerlevel9k theming options
+
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(dir_writable dir vcs)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status background_jobs time)
+POWERLEVEL9K_PROMPT_ON_NEWLINE=true
+
