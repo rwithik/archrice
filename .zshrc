@@ -116,7 +116,7 @@ unsetopt histverify
 
 bindkey -s '' 'sudo !!'
 bindkey -s 'fuck' 'OA[1~sudo [4~'
-
+bindkey -s  "projects"
 
 # Powerlevel9k theming options
 

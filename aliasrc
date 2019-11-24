@@ -7,7 +7,7 @@ alias clicker='python /home/rwithik/Programs/Python/autoclicker.py'
 
 alias r=ranger
 alias v=vim
-alias s=subl
+alias s=subl3
 alias p=python
 
 alias ic='vim ~/.config/i3/config'
@@ -17,7 +17,7 @@ alias zc='vim ~/.zshrc'
 alias :q=exit
 alias :wq=exit
 
-alias pj="cd ~/Projects/\`ls -1 ~/Projects | rofi -dmenu -l 5\`"
+alias projects="cd ~/Projects/\`ls -1 ~/Projects | rofi -dmenu -l 5\`"
 
 alias V="sudo vim"
 
