@@ -7,13 +7,18 @@ export ZSH="/home/rwithik/.oh-my-zsh"
 # Set name of the theme to load. Optionally, if you set this to "random"
 # it'll load a random theme each time that oh-my-zsh is loaded.
 # See https://github.com/robbyrussell/oh-my-zsh/wiki/Themes
-#ZSH_THEME="half-life" # Really good. Just make it two lined.
+ZSH_THEME="half-life" # Really good. Just make it two lined.
 #ZSH_THEME="lukerandall"
 #ZSH_THEME="mytheme"
 #ZSH_THEME="simple"
 #ZSH_THEME="agnoster-edited"
 #ZSH_THEME="garyblessington-edited"
-ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="powerlevel9k/powerlevel9k"
+#ZSH_THEME="afowler"
+#ZSH_THEME="linuxonly"
+#ZSH_THEME="pygmalion" # two lined only if needed!
+#ZSH_THEME="eastwood" # clean
+#ZSH_THEME="sunrise"
 
 # Set list of themes to load
 # Setting this variable when ZSH_THEME=random
@@ -66,6 +71,7 @@ COMPLETION_WAITING_DOTS="true"
 # Add wisely, as too many plugins slow down shell startup.
 plugins=(
   git
+  docker
   archlinux
   colored-man-pages
 )
