@@ -22,3 +22,32 @@ alias projects="cd ~/Projects/\`ls -1 ~/Projects | rofi -dmenu -l 5\`"
 alias V="sudo vim"
 
 alias minecraft="java -jar Desktop/TLauncher-2.66.jar"
+
+## Git aliases
+
+alias \
+	gst='git status' \
+	gc='git commit -v' \
+	gcmsg='git commit -m' \
+	gcam='git commit --all -m' \
+	gl='git pull' \
+	gp='git push' \
+	gb='git branch' \
+	gcm='git checkout master' \
+	gck='git checkout' \
+	ga='git add' \
+	gaa='git add --all' \
+	gd='git diff' \
+	gra='git remote add' \
+	gr='git remote' \
+	grv='git remote -v' \
+	grr='git remote remove' \
+	gsh='git stash'
+
+## archlinux aliases
+
+alias \
+	pacupg='sudo pacman -Syu' \
+	pacins='sudo pacman -S' \
+	pacrmorphans='sudo pacman -Rs $(pacman -Qtdq)'
+
