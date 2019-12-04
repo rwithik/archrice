@@ -41,23 +41,58 @@ else
 fi
 
 ## I have no idea what all these do. Just in here in case it breaks anything.
-source ~/.oh-my-zsh/lib/bzr.zsh
-source ~/.oh-my-zsh/lib/clipboard.zsh
-source ~/.oh-my-zsh/lib/compfix.zsh
+
+# Something sonething bazaar integration.
+# source ~/.oh-my-zsh/lib/bzr.zsh
+
+# Kinda nifty feature. Too bad I came to know about this only when I wanted to know what this did. I use xsel -b now.
+#source ~/.oh-my-zsh/lib/clipboard.zsh
+
+# Already sourced above
+# source ~/.oh-my-zsh/lib/compfix.zsh
+
+# Auto-complete and auto-correct scripts. Don't touch
 source ~/.oh-my-zsh/lib/completion.zsh
 source ~/.oh-my-zsh/lib/correction.zsh
-source ~/.oh-my-zsh/lib/diagnostics.zsh
-source ~/.oh-my-zsh/lib/directories.zsh
+
+# Uncomment to enable omz_diagnostics_dump and stuff
+# source ~/.oh-my-zsh/lib/diagnostics.zsh
+
+# Something ablout directories. But mostly aliases. 
+# source ~/.oh-my-zsh/lib/directories.zsh
+
+# Functions.
 source ~/.oh-my-zsh/lib/functions.zsh
-source ~/.oh-my-zsh/lib/git.zsh
-source ~/.oh-my-zsh/lib/grep.zsh
+
+# Git functions. I don't need this for the starship theme. Native themes will need this uncommented.
+# source ~/.oh-my-zsh/lib/git.zsh
+
+# Don't need this here either. I just use an alias.
+# source ~/.oh-my-zsh/lib/grep.zsh
+
+# I probably don't need this either. But I think it'll break the history file.
 source ~/.oh-my-zsh/lib/history.zsh
+
+# This file is seriously op. [Esc]+l means ls. wack.
 source ~/.oh-my-zsh/lib/key-bindings.zsh
+
+# There is literally magic in this file. I'm not touching it. Nope.
 source ~/.oh-my-zsh/lib/misc.zsh
-source ~/.oh-my-zsh/lib/nvm.zsh
-source ~/.oh-my-zsh/lib/prompt_info_functions.zsh
-source ~/.oh-my-zsh/lib/spectrum.zsh
-source ~/.oh-my-zsh/lib/termsupport.zsh
+
+# Similar to the git file. I don't need it with starship.
+# source ~/.oh-my-zsh/lib/nvm.zsh
+
+# Similar to the git and nvm files. Don't need it. Don't load it.
+# source ~/.oh-my-zsh/lib/prompt_info_functions.zsh
+
+# Coloring stuff for themes. Again, starship.
+# source ~/.oh-my-zsh/lib/spectrum.zsh
+
+# This file has functions to set the terminal title and stuff. I don't have title bars in i3, so... yeah.
+# source ~/.oh-my-zsh/lib/termsupport.zsh
+
+# ls colors among other things. Don't comment. looks ugly :(
+# Work on this later though, can strip it down a lot.
 source ~/.oh-my-zsh/lib/theme-and-appearance.zsh
 
 source ~/.oh-my-zsh/plugins/colored-man-pages/colored-man-pages.plugin.zsh
@@ -83,7 +118,6 @@ unsetopt histverify
 # Keybindings
 
 bindkey -s '' 'sudo !!'
-bindkey -s 'fuck' 'OA[1~sudo [4~'
 bindkey -s  "projects"
 
 # Starship theme init!

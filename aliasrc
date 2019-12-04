@@ -51,3 +51,18 @@ alias \
 	pacins='sudo pacman -S' \
 	pacrmorphans='sudo pacman -Rs $(pacman -Qtdq)'
 
+## cd aliases
+
+alias \
+	...='cd ../..' \
+	....='cd ../../../' \
+	.....='cd ../../../../' \
+	......='cd ../../../../../' \
+	--='cd -' \
+	la='ls -Ah' \
+	l='ls -lAh;'
+
+## Grep alias
+
+alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn}'
+
