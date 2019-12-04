@@ -132,7 +132,7 @@
 
     # Alignment of message text.
     # Possible values are "left", "center" and "right".
-    alignment = right
+    alignment = left
 
     # Show age of message if message is older than show_age_threshold
     # seconds.
