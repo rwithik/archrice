@@ -17,5 +17,5 @@ conky.config = {
 	use_xft = true,
 }
 conky.text = [[
-${execi 3600 python /home/rwithik/Programs/Python/birthdayScript.py}
+${execi 3600 python /home/rwithik/Programs/Python/birthdayScript.py }
 ]]

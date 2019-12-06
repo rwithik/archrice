@@ -120,4 +120,4 @@ bindkey -s '' 'sudo !!'
 bindkey -s 'fuck' 'OA[1~sudo [4~'
 bindkey -s  "projects"
 
-eval "$(starship init zsh)"
+#eval "$(starship init zsh)"
