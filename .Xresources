@@ -11,7 +11,7 @@ Xft.rgba:                       rgb
 ! URxvt
 URxvt*termName:                 rxvt-256color
 URxvt.depth:                    32
-URxvt*lineSpace:                1
+URxvt*lineSpace:                0
 URxvt.letterSpace:              -1
 URxvt.iso14755:                 false
 URxvt.iso14755_52:              false
@@ -34,7 +34,7 @@ URxvt.visuaBbell: 			true
 ! URxvt.urgentOnBell
 
 ! Fonts
-URxvt*font:	xft:Inconsolata:size=11
+URxvt*font:	Fira Code Retina: 
 ! Urxvt.boldFont: ttf:Inconsolata-13
 ! Urxvt.letterSpace: 		3 
 ! URxvt.font: ttf:FontAwesome-14
