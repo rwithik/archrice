@@ -133,7 +133,6 @@ exec --no-startup-id xmodmap -e "keycode 66 = Escape NoSymbol Escape"
 
 # bindsym F1 [instance="dropdown"] scratchpad show, move position center
 
-# for_window [instance="dropdown"] floating enable, resize set 800 600, move scratchpad
 
 # ================================================
 # KEYBINDINGS
@@ -218,8 +217,8 @@ bindsym $mod+F3 exec ~/Desktop/Scripts/rangerScript
 bindsym $mod+Shift+F3 exec ~/Desktop/Scripts/pcmanScript
 bindsym $mod+Shift+i exec $rangerterm -n floatterm -e ranger ~/wallpapers
 
-bindsym $mod+b exec --no-startup-id firefox
-bindsym $mod+Shift+b exec --no-startup-id firefox --private-window
+bindsym $mod+b exec firefox
+bindsym $mod+Shift+b exec firefox --private-window
 bindsym $mod+i exec ~/Desktop/Scripts/firefoxScript
 
 bindsym $mod+m exec $rangerterm -n music -e '/home/rwithik/Desktop/Scripts/music'
@@ -237,7 +236,7 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 
 # Scratchpad controls
 bindsym $mod+Shift+grave move scratchpad
-bindsym $mod+asciitilde scratchpad show
+bindsym $mod+asciitilde [instance="^((?!dropdown).)*$"] scratchpad show
 
 # Screenshot
 bindsym Print exec --no-startup-id i3-scrot
@@ -273,7 +272,7 @@ bindsym $mod+Shift+z floating enable, resize set 535 160, move position 800 30
 
 bindsym $mod+Shift+m move position center
 
-bindsym $mod+c exec --no-startup-id ~/Desktop/Scripts/sublime.sh
+bindsym $mod+c exec ~/Desktop/Scripts/sublime.sh
 
 bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86AudioPlay exec playerctl play-pause
@@ -318,20 +317,37 @@ bar {
         separator  #454947
 
 #                    	   border  backgr. text
-# #        focused_workspace  #F9FAF9 #16a085 #292F34
-#         focused_workspace  $color0 $color7	   $color0
-# #        active_workspace   #595B5B #353836 #FDF6E3
-#         active_workspace   $color7 $color2 $color7
-# #		inactive_workspace #595B5B #283339 #EEE8D5
-#         inactive_workspace #color7 $color2 $color7
-         binding_mode       #16a085 #2C2C2C #F9FAF9
-         urgent_workspace   #16a085 #FDF6E3 #E5201D
+        binding_mode       #16a085 #2C2C2C #F9FAF9
+        urgent_workspace   #16a085 #FDF6E3 #E5201D
 		focused_workspace #F9FAF9 #00000000 $color7
 		active_workspace #F9FAF9 #00000000 $color7
 		inactive_workspace #595B5B #00000000 $color7
     }
+	
+	# Experimenting 
+	
+	bindsym --release button3 exec --no-startup-id $term
+	tray_output primary
+
 }
 
  bindsym $mod+n exec llk
 #for_window [urgent=latest] exec "notify-send Hello, i3"
 
+# Experimenting 
+bindsym $mod+o mode mode_open
+
+mode mode_open {
+	bindsym f exec firefox; mode default
+	bindsym t exec $term; mode default
+	bindsym c exec code; mode default
+	bindsym a exec atom; mode default
+
+	bindsym Escape mode default
+	bindsym Return mode default
+}
+
+# Dropdown terminal, bitches
+
+for_window [instance="dropdown"] floating enable, border none, resize set 1366 300, move position 0 0, move scratchpad
+bindsym Mod1+grave [instance="dropdown"] scratchpad show 

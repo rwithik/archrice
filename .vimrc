@@ -97,4 +97,9 @@ filetype indent on
 let g:vim_markdown_folding_disabled = 1
 let g:vim_markdown_math = 1
 
-" autocmd VimEnter :echo "^.^"
+" Remove this whenever
+
+inoremap <Left>  <NOP>
+inoremap <Right> <NOP>
+inoremap <Up>    <NOP>
+inoremap <Down>  <NOP>
