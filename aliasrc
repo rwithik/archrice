@@ -8,6 +8,8 @@ alias clicker='python /home/rwithik/Programs/Python/autoclicker.py'
 alias r=ranger
 alias v=vim
 alias s=subl3
+alias c=code
+alias a=atom
 alias p=python
 
 alias ic='vim ~/.config/i3/config'

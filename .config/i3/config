@@ -236,7 +236,7 @@ bindsym XF86AudioLowerVolume exec amixer set Master 5%-
 
 # Scratchpad controls
 bindsym $mod+Shift+grave move scratchpad
-bindsym $mod+asciitilde [instance="^((?!dropdown).)*$"] scratchpad show
+bindsym $mod+asciitilde [class="^((?!dropdown).)*$"] scratchpad show
 
 # Screenshot
 bindsym Print exec --no-startup-id i3-scrot
@@ -267,7 +267,7 @@ bindsym $mod+Shift+Right move right
 bindsym $mod+p exec $term -n pipterm
 bindsym $mod+Shift+p floating enable, resize set 600 340, move position 750 30, sticky enable
 
-bindsym $mod+z exec $term -n boxterm 
+# bindsym $mod+z exec $term -n boxterm 
 bindsym $mod+Shift+z floating enable, resize set 535 160, move position 800 30
 
 bindsym $mod+Shift+m move position center
@@ -349,5 +349,6 @@ mode mode_open {
 
 # Dropdown terminal, bitches
 
-for_window [instance="dropdown"] floating enable, border none, resize set 1366 300, move position 0 0, move scratchpad
-bindsym Mod1+grave [instance="dropdown"] scratchpad show 
+for_window [class="dropdown"] floating enable, border none, resize set 1366 300, move position 0 0, move scratchpad
+bindsym Mod1+grave [class="dropdown"] scratchpad show 
+bindsym $mod+z [class="dropdown"] scratchpad show 

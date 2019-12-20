@@ -7,6 +7,9 @@ set showcmd
 set tabstop=4
 set relativenumber
 set number
+set ignorecase
+set smartcase
+set incsearch
 
 filetype plugin on
 syntax on
@@ -99,6 +102,10 @@ let g:vim_markdown_math = 1
 
 " Remove this whenever
 
+noremap <Left>  <NOP>
+noremap <Right> <NOP>
+noremap <Up>    <NOP>
+noremap <Down>  <NOP>
 inoremap <Left>  <NOP>
 inoremap <Right> <NOP>
 inoremap <Up>    <NOP>
