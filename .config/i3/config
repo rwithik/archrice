@@ -97,8 +97,9 @@ set $ws10 "10:"
 #bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # i3 gaps
-gaps inner 35
-gaps outer 0
+gaps inner 6
+gaps outer 20
+smart_gaps inverse_outer
 workspace $ws1 gaps inner 6
 workspace $ws1 gaps outer 0
 
@@ -124,7 +125,7 @@ exec --no-startup-id nm-applet
 exec --no-startup-id xfce4-power-manager
 exec --no-startup-id xset -b
 exec --no-startup-id /home/rwithik/Desktop/Scripts/conky_start
-# exec xdotool behave_screen_edge --delay 1000 bottom-left exec /home/rwithik/Desktop/Scripts/lockscreen.sh
+exec --no-startup-id st -c "dropdown" & disown
 exec --no-startup-id libinput-gestures-setup start
 exec --no-startup-id xmodmap -e "clear lock"
 exec --no-startup-id xmodmap -e "keycode 9 = Escape NoSymbol Escape"

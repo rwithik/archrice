@@ -25,6 +25,14 @@ filetype indent on
 	inoremap <leader>g <++>
 	noremap <leader>g a<++><Esc>
 
+" QoL changes lol
+	cnoreabbrev W! w!
+	cnoreabbrev Q! q!
+	cnoreabbrev Wq wq
+	cnoreabbrev WQ wq
+	cnoreabbrev W w
+	cnoreabbrev Q q
+
 " Keymaps for C Files
 
 	autocmd FileType c inoremap <leader>p printf("<++>", );<++><Esc>0
