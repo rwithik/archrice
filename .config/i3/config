@@ -102,6 +102,8 @@ gaps outer 20
 smart_gaps inverse_outer
 workspace $ws1 gaps inner 6
 workspace $ws1 gaps outer 0
+workspace $ws2 gaps inner 6
+workspace $ws2 gaps outer 0
 
 
 # Remove window borders
@@ -110,7 +112,7 @@ for_window [class="(?i)gsimplecal"] floating enable, move position, move down $h
 
 # Scripts to be executed on startup
 # exec compton -cCGf -b -i 0.75 --vsync opengl --opacity-rule '99:name *= "Firefox"'
-exec --no-startup-id compton -b
+exec --no-startup-id picom -b
 # exec polybar bar &
 # Uncomment the line below, if the conly script isnot run on startup to set the wallpaper
 # exec wal -i /home/rwithik/wallpapers/Landscapes/
