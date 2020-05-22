@@ -268,7 +268,7 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 bindsym $mod+p exec $term -n pipterm
-bindsym $mod+Shift+p floating enable, resize set 600 340, move position 750 30, sticky enable
+bindsym $mod+Shift+p floating enable, resize set 500 290, move position 800 30, sticky enable
 
 # bindsym $mod+z exec $term -n boxterm 
 bindsym $mod+Shift+z floating enable, resize set 535 160, move position 800 30

@@ -6,14 +6,14 @@ alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloade
 alias clicker='python /home/rwithik/Programs/Python/autoclicker.py'
 
 alias r=ranger
-alias v=vim
+alias v=nvim
 alias s=subl3
 alias c=code
 alias a=atom
 alias p=python
 
 alias ic='vim ~/.config/i3/config'
-alias vc='vim ~/.vimrc'
+alias vc='vim ~/.config/nvim/init/vim'
 alias zc='vim ~/.zshrc'
 
 alias :q=exit
@@ -29,6 +29,7 @@ alias minecraft="java -jar Desktop/TLauncher-2.66.jar"
 
 alias \
 	gst='git status' \
+	gcl='git clone' \
 	gc='git commit -v' \
 	gcmsg='git commit -m' \
 	gcam='git commit --all -m' \
@@ -63,6 +64,15 @@ alias \
 	--='cd -' \
 	la='ls -Ah' \
 	l='ls -lAh;'
+
+## yarn aliases
+
+alias \
+	ys='yarn start' \
+	yr='yarn run' \
+	yb='yarn build' \
+	yi='yarn install' \
+	ya='yarn add' \
 
 ## Grep alias
 

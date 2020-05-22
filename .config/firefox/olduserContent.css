@@ -1,0 +1,41 @@
+@-moz-document domain(github.com) {
+  .blob-code-inner,
+  .markdown-body .highlight pre,
+  .markdown-body pre,
+  tt,
+  code {
+    font-family: "Fira Code", "SFMono-Regular", Consolas, "Liberation Mono",
+      Menlo, Courier, monospace;
+    font-feature-settings: "calt" 1;
+    font-variant-ligatures: contextual;
+  }
+}
+
+@-moz-document domain(bitbucket.com) {
+  .refract-content-container .line-numbers,
+  .refract-content-container .source,
+  body.adg3 .wiki-content pre,
+  body.adg3 ak-editor-bitbucket .ProseMirror pre,
+  body.adg3 ak-editor-bitbucket .code,
+  body.adg3 code,
+  body.adg3 pre,
+  body.adg3 tt {
+    font-family: "Fira Code";
+  }
+}
+
+@-moz-document domain(bitbucket.com) {
+  .graf--pre,
+  .markup--blockquote-code,
+  .markup--li-code,
+  .markup--p-code {
+    font-family: "Fira Code";
+  }
+}
+
+@-moz-document domain(colab.research.google.com) {
+  .lines-content.monaco-editor-background {
+    font-family: "Fira Code";
+    font-variant-ligatures: contextual;
+  }
+}

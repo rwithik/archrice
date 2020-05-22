@@ -1,0 +1,14 @@
+@-moz-document domain(leetcode.com) {
+	span.cm-comment {
+		font-style: italic !important;
+	}
+	span.cm-type {
+		font-style: italic !important;
+	}
+}
+
+@-moz-document domain(github.com) {
+	span.pl-c {
+		font-style: italic !important;
+	}
+}
