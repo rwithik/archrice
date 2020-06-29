@@ -1,17 +1,15 @@
 C		~/Programs/C/
 ag		~/Projects/Algorithm-Day/
 b		~/Documents/E-Books/
-cf		~/.config/
 ci		~/.config/i3/
+cf		~/.config/
 cpp		~/Programs/C++/
 cr		~/.config/ranger/
 cse		~/Documents/CSE/
 dc		~/Documents/
 dk		~/Desktop/
 dl		~/Downloads/
-fl		~/Projects/foss-lab/
 h		~/
-jv		~/Programs/Java/
 me		~/Music/English/
 mm		~/Music/Malayalam/
 mo		~/Videos/Movies/
@@ -25,4 +23,6 @@ rice 	~/archrice/
 scr		~/Desktop/Scripts/
 ss		~/Pictures/Screenshots/
 tv		~/Videos/Series/
+wk		~/Work/
 wp		~/wallpapers/
+f		~/Documents/foe/

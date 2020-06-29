@@ -1,9 +1,6 @@
 alias cls=clear
 alias clock=tty-clock
 
-alias getsong='python3.7 /home/rwithik/Programs/Python/song-downloader/downloader.py'
-
-alias clicker='python /home/rwithik/Programs/Python/autoclicker.py'
 
 alias r=ranger
 alias v=nvim
@@ -11,10 +8,12 @@ alias s=subl3
 alias c=code
 alias a=atom
 alias p=python
+alias pm='sudo pacman'
 
-alias ic='vim ~/.config/i3/config'
-alias vc='vim ~/.config/nvim/init/vim'
-alias zc='vim ~/.zshrc'
+alias ic='nvim ~/.config/i3/config'
+alias vc='nvim ~/.config/nvim/init/vim'
+alias zc='nvim ~/.zshrc'
+alias spec='nvim ~/.config/spectrwm'
 
 alias :q=exit
 alias :wq=exit
@@ -23,7 +22,9 @@ alias projects="cd ~/Projects/\`ls -1 ~/Projects | rofi -dmenu -l 5\`"
 
 alias V="sudo vim"
 
-alias minecraft="java -jar Desktop/TLauncher-2.66.jar"
+alias minecraft="java -jar ~/Desktop/TLauncher-2.69.jar"
+
+alias dmenu="dmenu -fn 'Source Code Pro'"
 
 ## Git aliases
 

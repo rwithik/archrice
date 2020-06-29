@@ -47,7 +47,7 @@ gssh ()
 	killall ssh-agent > /dev/null
 	echo "Spawning the ssh-agent.."
 	eval "$(ssh-agent -s)"
-	ssh-add
+	ssh-add ~/.ssh/github_rsa
 	echo -e "You will not be prompted for the passphrase again in this session."
 }
 
@@ -60,4 +60,9 @@ vcd () {
         [ -d "$dir" ] && [ "$dir" != "$(pwd)" ] && cd "$dir"
     fi
 }
+
+links () {
+	cat ~/links | dmenu -l 5 | xsel -b
+}
+
 bindkey -s '^o' 'vcd\n'
