@@ -11,7 +11,7 @@ alias p=python
 alias pm='sudo pacman'
 
 alias ic='nvim ~/.config/i3/config'
-alias vc='nvim ~/.config/nvim/init/vim'
+alias vc='nvim ~/.config/nvim/init.vim'
 alias zc='nvim ~/.zshrc'
 alias spec='nvim ~/.config/spectrwm'
 
