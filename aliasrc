@@ -1,6 +1,8 @@
 alias cls=clear
 alias clock=tty-clock
 
+alias ls=lsd
+alias cat=bat
 
 alias r=ranger
 alias v=nvim
@@ -22,7 +24,7 @@ alias projects="cd ~/Projects/\`ls -1 ~/Projects | rofi -dmenu -l 5\`"
 
 alias V="sudo vim"
 
-alias minecraft="java -jar ~/Desktop/TLauncher-2.69.jar"
+alias minecraft="java -jar ~/Desktop/TLauncher-2.75.jar"
 
 alias dmenu="dmenu -fn 'Source Code Pro'"
 
@@ -74,9 +76,21 @@ alias \
 	yb='yarn build' \
 	yi='yarn install' \
 	ya='yarn add' \
+	yrd='yarn run dev'\
+
+alias \
+	ns='npm start' \
+	nr='npm run' \
+	nrd='npm run dev' \
+	ni='npm install' \
+	nid='npm i --save-dev' \
+	nb='npm build'
 
 ## Grep alias
 
 alias grep='grep  --color=auto --exclude-dir={.bzr,CVS,.git,.hg,.svn,node_modules}'
 
 alias td='v ~/archrice/.config/conky/todo.tasks'
+
+alias fb='cd ~/finbox'
+alias m=make
